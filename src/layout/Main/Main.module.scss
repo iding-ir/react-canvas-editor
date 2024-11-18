@@ -1,0 +1,20 @@
+.container {
+  grid-row: start-main/end-main;
+  grid-column: start-main/end-main;
+  background-color: var(--color-lighter);
+  overflow: auto;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: var(--spacing-md) 0;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: var(--spacing-md) 0;
+  }
+}

@@ -1,0 +1,5 @@
+.container {
+  grid-row: start-header/end-header;
+  grid-column: start-header/end-header;
+  border-bottom: var(--border-thickness-sm) solid var(--color-lighter);
+}
