@@ -1,31 +1,24 @@
-import { Circle, Layer, Rect, Stage } from "react-konva";
+import { Layer, Stage } from "react-konva";
 import styles from "./Canvas.module.scss";
-
-export type Size = {
-  width: number;
-  height: number;
-};
-
-export type Sizes = {
-  [key: string]: Size;
-};
-
-export const sizes: Sizes = {
-  sm: { width: 320, height: 240 },
-  md: { width: 640, height: 480 },
-  lg: { width: 800, height: 600 },
-};
+import { useAppSelector } from "../../app/hooks";
+import { selectImages } from "../../features/gallery";
+import { sizes } from "../../constants/stage";
+import { AsyncImage } from "../AsyncImage";
 
 export const Canvas = () => {
+  const images = useAppSelector(selectImages);
+  const stageSize = sizes.md;
+
   return (
     <Stage
       className={styles.container}
-      width={sizes.md.width}
-      height={sizes.md.height}
+      width={stageSize.width}
+      height={stageSize.height}
     >
       <Layer>
-        <Rect width={50} height={50} fill="red" />
-        <Circle x={200} y={200} stroke="black" radius={50} />
+        {images.map((image, index) => (
+          <AsyncImage image={image} stageSize={stageSize} key={index} />
+        ))}
       </Layer>
     </Stage>
   );
