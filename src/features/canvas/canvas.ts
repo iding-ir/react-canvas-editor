@@ -7,3 +7,12 @@ export const canvasSizes: Sizes = {
 };
 
 export const DEFAULT_CANVAS_SIZE = canvasSizes.md;
+
+export enum TOOLS {
+  pen = "pen",
+  eraser = "eraser",
+}
+
+export const DEFAULT_TOOL = TOOLS.pen;
+
+export type Tool = keyof typeof TOOLS;

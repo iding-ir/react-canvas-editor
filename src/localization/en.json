@@ -5,6 +5,7 @@
   "navigation": {
     "upload": "Upload",
     "brush": "Brush",
+    "eraser": "Eraser",
     "text": "Text"
   },
   "canvas": {
