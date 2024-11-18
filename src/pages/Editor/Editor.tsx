@@ -1,15 +1,27 @@
 import { Layout } from "../../layout";
+import { Navigation } from "../../components/Navigation";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { useTranslation } from "react-i18next";
 
 export const Editor = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout.Section>
-      <Layout.Navigation>Nav </Layout.Navigation>
+      <Layout.Navigation>
+        <Navigation />
+      </Layout.Navigation>
 
-      <Layout.Header>Head</Layout.Header>
+      <Layout.Header>
+        <Header title={t("header.title")} />
+      </Layout.Header>
 
       <Layout.Main>Main</Layout.Main>
 
-      <Layout.Footer>Foot</Layout.Footer>
+      <Layout.Footer>
+        <Footer />
+      </Layout.Footer>
     </Layout.Section>
   );
 };

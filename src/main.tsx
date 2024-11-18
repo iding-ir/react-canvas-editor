@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "./localization/";
 
 import "./styles/reset.scss";
 import "./styles/fonts.scss";

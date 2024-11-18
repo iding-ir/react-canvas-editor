@@ -1,0 +1,156 @@
+.container {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  align-items: center;
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-md);
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 30%;
+
+    background-color: var(--color-lighter);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  .text {
+    font-size: var(--font-size-xs);
+  }
+
+  &.sm {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+
+    .icon {
+      width: 90%;
+      height: 90%;
+    }
+  }
+
+  &.md {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+
+    .icon {
+      width: 60%;
+      height: 60%;
+    }
+  }
+
+  &.lg {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+
+    .icon {
+      width: 30%;
+      height: 30%;
+    }
+  }
+
+  &.normal {
+    background-color: var(--color-light);
+
+    .icon {
+      background-color: var(--color-primary-lg);
+    }
+
+    .text {
+      color: var(--color-primary-lg);
+    }
+
+    &.active,
+    &:hover {
+      background-color: var(--color-secondary-md);
+
+      .icon {
+        background-color: var(--color-lighter);
+      }
+
+      .text {
+        color: var(--color-lighter);
+      }
+    }
+  }
+
+  &.reverse {
+    background-color: var(--color-primary-md);
+
+    .icon {
+      background-color: var(--color-lighter);
+    }
+
+    .text {
+      color: var(--color-lighter);
+    }
+
+    &.active,
+    &:hover {
+      background-color: var(--color-secondary-sm);
+
+      .icon {
+        background-color: var(--color-darker);
+      }
+
+      .text {
+        color: var(--color-darker);
+      }
+    }
+  }
+
+  &.animated:hover {
+    .icon {
+      animation: shake 0.5s;
+    }
+
+    .text {
+      animation: accordion 0.5s;
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes accordion {
+  0% {
+    letter-spacing: 1px;
+  }
+  40% {
+    letter-spacing: 2px;
+  }
+  60% {
+    letter-spacing: 1px;
+  }
+  80% {
+    letter-spacing: -1px;
+  }
+  100% {
+    letter-spacing: 0;
+  }
+}

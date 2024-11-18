@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "Canvas Editor"
+  },
+  "navigation": {
+    "upload": "Upload",
+    "brush": "Brush",
+    "text": "Text"
+  }
+}
