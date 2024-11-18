@@ -1,0 +1,100 @@
+html {
+  --size-ratio: 1;
+
+  // Colors
+  --color-primary-sm: #{$color-primary-light-sm};
+  --color-secondary-sm: #{$color-secondary-light-sm};
+
+  --color-primary-md: #{$color-primary-light-md};
+  --color-secondary-md: #{$color-secondary-light-md};
+
+  --color-primary-lg: #{$color-primary-light-lg};
+  --color-secondary-lg: #{$color-secondary-light-lg};
+
+  --color-lighter: #fafafa;
+  --color-light: #eeeeee;
+  --color-dark: #323232;
+  --color-darker: #212121;
+
+  --color-grey-sm: #eceff1;
+  --color-grey-md: #cfd8dc;
+  --color-grey-lg: #b0bec5;
+
+  --color-fade-sm: rgba(120, 120, 120, 0.2);
+  --color-fade-md: rgba(120, 120, 120, 0.4);
+  --color-fade-lg: rgba(120, 120, 120, 0.6);
+
+  --color-transparent: rgba(0, 0, 0, 0);
+
+  // Font sizes
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.2rem;
+  --font-size-lg: 1.6rem;
+  --font-size-xl: 2.4rem;
+
+  // Spacing
+  --spacing-xs: 0.2rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1.2rem;
+  --spacing-lg: 1.8rem;
+  --spacing-xl: 2.4rem;
+
+  // Icons
+  --icon-size-sm: 1.6rem;
+  --icon-size-md: 3.2rem;
+  --icon-size-lg: 6.4rem;
+
+  // Border
+  --border-radius: 4px;
+
+  --border-thickness-sm: 0.1rem;
+  --border-thickness-md: 0.2rem;
+  --border-thickness-lg: 0.3rem;
+
+  --transition-sm: 0.1s;
+  --transition-md: 0.3s;
+  --transition-lg: 0.5s;
+
+  --box-shadow-sm: 0px 0px 3px rgba(#{$dark}, #{$dark}, #{$dark}, 0.1);
+  --box-shadow-md: 0px 0px 5px rgba(#{$dark}, #{$dark}, #{$dark}, 0.1);
+  --box-shadow-lg: 0px 0px 8px rgba(#{$dark}, #{$dark}, #{$dark}, 0.2);
+
+  --box-shadow-inset-sm: 0px 0px 4px inset
+    rgba(#{$dark}, #{$dark}, #{$dark}, 0.1);
+  --box-shadow-inset-md: 0px 0px 8px inset
+    rgba(#{$dark}, #{$dark}, #{$dark}, 0.2);
+  --box-shadow-inset-lg: 0px 0px 12px inset
+    rgba(#{$dark}, #{$dark}, #{$dark}, 0.3);
+
+  --page-transition-duration: 1500ms;
+
+  &[data-theme="dark"] {
+    // Colors
+    --color-primary-sm: #{$color-primary-dark-sm};
+    --color-secondary-sm: #{$color-secondary-dark-sm};
+
+    --color-primary-md: #{$color-primary-dark-md};
+    --color-secondary-md: #{$color-secondary-dark-md};
+
+    --color-primary-lg: #{$color-primary-dark-lg};
+    --color-secondary-lg: #{$color-secondary-dark-lg};
+
+    --color-lighter: #212121;
+    --color-light: #323232;
+    --color-dark: #eeeeee;
+    --color-darker: #fafafa;
+
+    --color-grey-sm: #eceff1;
+    --color-grey-md: #cfd8dc;
+    --color-grey-lg: #b0bec5;
+  }
+
+  &[data-size="sm"] {
+    --size-ratio: #{$size-ratio-sm};
+  }
+
+  &[data-size="lg"] {
+    --size-ratio: #{$size-ratio-lg};
+  }
+}

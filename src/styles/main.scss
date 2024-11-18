@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  height: 100%; /* Avoiding vh because it's not best supported by some mobile browsers */
+}
+
+html {
+  font-family: Roboto;
+  font-size: calc(var(--size-ratio) * 12px);
+  line-height: 1.5;
+
+  @media only screen and (min-width: $breakpoint-md) {
+    font-size: calc(var(--size-ratio) * 14px);
+  }
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    font-size: calc(var(--size-ratio) * 16px);
+  }
+}
+
+body * {
+  font-family: Roboto;
+  font-size: 1rem;
+  color: var(--color-dark);
+}
+
+html *,
+html *::after,
+html *::before {
+  box-sizing: border-box;
+  user-select: none;
+}
