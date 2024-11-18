@@ -6,8 +6,9 @@ import {
 } from "@reduxjs/toolkit";
 
 import { languageSlice } from "../features/language";
+import { gallerySlice } from "../features/gallery";
 
-const rootReducer = combineSlices(languageSlice);
+const rootReducer = combineSlices(languageSlice, gallerySlice);
 
 export const store = configureStore({
   reducer: rootReducer,
