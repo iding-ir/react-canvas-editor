@@ -7,8 +7,9 @@ import {
 
 import { languageSlice } from "../features/language";
 import { gallerySlice } from "../features/gallery";
+import { canvasSlice } from "../features/canvas";
 
-const rootReducer = combineSlices(languageSlice, gallerySlice);
+const rootReducer = combineSlices(languageSlice, gallerySlice, canvasSlice);
 
 export const store = configureStore({
   reducer: rootReducer,

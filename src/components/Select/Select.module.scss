@@ -1,0 +1,89 @@
+.container {
+  display: grid;
+  gap: var(--spacing-sm);
+  grid-template-rows:
+    [start start-icon start-label] auto
+    [end-icon end-label start-select start-arrow] auto
+    [end-select end-arrow end];
+  grid-template-columns:
+    [start start-icon start-select] auto
+    [end-icon start-label] 1fr [end-select start-arrow] auto
+    [end-arrow end-label end];
+  width: 20rem;
+  z-index: 10;
+
+  & > * {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    grid-row: start-icon/end-icon;
+    grid-column: start-icon/end-icon;
+
+    svg {
+      width: var(--icon-size-sm);
+      height: auto;
+
+      * {
+        fill: var(--color-primary-md);
+        transition: var(--transition-sm);
+      }
+    }
+  }
+
+  label {
+    grid-row: start-label/end-label;
+    grid-column: start-label/end-label;
+    color: var(--color-dark);
+    transition: var(--transition-sm);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-secondary-md);
+    }
+  }
+
+  select {
+    grid-row: start-select/end-select;
+    grid-column: start-select/end;
+    padding: var(--spacing-md);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    border: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+
+    option {
+      background-color: var(--color-light);
+    }
+
+    &:focus {
+      background-color: var(--color-fade-md);
+
+      ~ .arrow {
+        * {
+          fill: var(--color-secondary-md);
+        }
+      }
+    }
+  }
+
+  .arrow {
+    grid-row: start-arrow/end-arrow;
+    grid-column: start-arrow/end-arrow;
+    padding: 0 var(--spacing-sm);
+
+    svg {
+      width: var(--icon-size-sm);
+      height: auto;
+
+      * {
+        fill: var(--color-primary-md);
+        transition: var(--transition-sm);
+      }
+    }
+  }
+}

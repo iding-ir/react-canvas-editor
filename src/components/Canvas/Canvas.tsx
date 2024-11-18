@@ -2,12 +2,12 @@ import { Layer, Stage } from "react-konva";
 import styles from "./Canvas.module.scss";
 import { useAppSelector } from "../../app/hooks";
 import { selectImages } from "../../features/gallery";
-import { sizes } from "../../constants/stage";
 import { AsyncImage } from "../AsyncImage";
+import { selectCanvasSize } from "../../features/canvas";
 
 export const Canvas = () => {
   const images = useAppSelector(selectImages);
-  const stageSize = sizes.md;
+  const stageSize = useAppSelector(selectCanvasSize);
 
   return (
     <Stage

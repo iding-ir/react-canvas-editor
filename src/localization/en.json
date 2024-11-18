@@ -6,5 +6,8 @@
     "upload": "Upload",
     "brush": "Brush",
     "text": "Text"
+  },
+  "canvas": {
+    "sizeSelector": "Size"
   }
 }

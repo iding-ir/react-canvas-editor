@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--spacing-sm);
 
   :global(.konvajs-content) {
     border: var(--border-thickness-sm) solid var(--color-grey-md);

@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../app/hooks";
+import { CanvasSizeSelector } from "../../features/canvas/components/CanvasSizeSelector";
 import { hasImages } from "../../features/gallery";
 import { Canvas } from "../Canvas";
 import { Gallery } from "../Gallery";
@@ -10,6 +11,8 @@ export const Main = () => {
   return (
     <div className={styles.container}>
       {showGallery && <Gallery />}
+
+      <CanvasSizeSelector />
 
       <Canvas />
     </div>

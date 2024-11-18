@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Size } from "../../constants/stage";
 import { getImageDisplaySize } from "../../methods/get-image-display-size";
 import { Image } from "react-konva";
+import { Size } from "../../types";
 
 export const AsyncImage = ({
   image,

@@ -1,4 +1,4 @@
-import { Size } from "../constants/stage";
+import { Size } from "../types";
 
 export const getImageDisplaySize = (
   image: HTMLImageElement,
