@@ -26,43 +26,41 @@ export const Navigation = () => {
   }, []);
 
   return (
-    <nav className={styles.container}>
-      <ul>
-        <li>
-          <Dropzone onDrop={onDrop}>
-            {({ getRootProps, getInputProps }) => (
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <Icon
-                  text={t("navigation.upload")}
-                  animated
-                  onClick={() => console.log("upload")}
-                >
-                  <UploadIcon />
-                </Icon>
-              </div>
-            )}
-          </Dropzone>
-        </li>
-        <li>
-          <Icon
-            text={t("navigation.brush")}
-            animated
-            onClick={() => console.log("brush")}
-          >
-            <BrushIcon />
-          </Icon>
-        </li>
-        <li>
-          <Icon
-            text={t("navigation.text")}
-            animated
-            onClick={() => console.log("text")}
-          >
-            <TextIcon />
-          </Icon>
-        </li>
-      </ul>
-    </nav>
+    <ul className={styles.container}>
+      <li>
+        <Dropzone onDrop={onDrop}>
+          {({ getRootProps, getInputProps }) => (
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <Icon
+                text={t("navigation.upload")}
+                animated
+                onClick={() => console.log("upload")}
+              >
+                <UploadIcon />
+              </Icon>
+            </div>
+          )}
+        </Dropzone>
+      </li>
+      <li>
+        <Icon
+          text={t("navigation.brush")}
+          animated
+          onClick={() => console.log("brush")}
+        >
+          <BrushIcon />
+        </Icon>
+      </li>
+      <li>
+        <Icon
+          text={t("navigation.text")}
+          animated
+          onClick={() => console.log("text")}
+        >
+          <TextIcon />
+        </Icon>
+      </li>
+    </ul>
   );
 };
