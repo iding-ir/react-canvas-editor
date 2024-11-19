@@ -1,4 +1,4 @@
-import { Layer, Line, Rect, Stage } from "react-konva";
+import { Layer, Line, Rect, Stage, Text } from "react-konva";
 import styles from "./Canvas.module.scss";
 import { useAppSelector } from "../../app/hooks";
 import { selectImages } from "../../features/gallery";
@@ -9,6 +9,7 @@ import {
 } from "../../features/canvas";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
 import { selectBrushColor, selectBrushSize } from "../../features/brush";
+import { selectTexts } from "../../features/text";
 
 export const Canvas = () => {
   const images = useAppSelector(selectImages);
@@ -17,6 +18,7 @@ export const Canvas = () => {
   const canvasSize = useAppSelector(selectCanvasSize);
   const brushSize = useAppSelector(selectBrushSize);
   const brushColor = useAppSelector(selectBrushColor);
+  const texts = useAppSelector(selectTexts);
   const { lines, handleMouseDown, handleMouseMove, handleMouseUp } =
     useFreehandDrawing();
 
@@ -56,6 +58,17 @@ export const Canvas = () => {
             globalCompositeOperation={
               line.tool === "eraser" ? "destination-out" : "source-over"
             }
+          />
+        ))}
+      </Layer>
+
+      <Layer>
+        {texts.map((text, i) => (
+          <Text
+            key={i}
+            text={text.text}
+            textSize={text.size}
+            fill={text.color}
           />
         ))}
       </Layer>

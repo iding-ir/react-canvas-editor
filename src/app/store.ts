@@ -12,12 +12,14 @@ import { navigationSlice } from "../features/navigation";
 import { languageListenerMiddleware } from "../features/language/language-middleware";
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { brushSlice } from "../features/brush";
+import { textSlice } from "../features/text";
 
 const rootReducer = combineSlices(
   languageSlice,
   gallerySlice,
   canvasSlice,
   brushSlice,
+  textSlice,
   navigationSlice
 );
 

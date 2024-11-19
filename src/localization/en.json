@@ -36,6 +36,23 @@
       "button": "Set color"
     }
   },
+  "text": {
+    "input": {
+      "title": "Text",
+      "placeholder": "Enter text here",
+      "button": "Add text"
+    },
+    "sizeSelector": {
+      "title": "Size",
+      "options": {
+        "fontSize": "fontSize"
+      }
+    },
+    "color": {
+      "title": "Color",
+      "button": "Set color"
+    }
+  },
   "gallery": {
     "upload": "Upload"
   },
