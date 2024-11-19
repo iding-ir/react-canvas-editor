@@ -1,14 +1,19 @@
-import { Layer, Line, Stage } from "react-konva";
+import { Layer, Line, Rect, Stage } from "react-konva";
 import styles from "./Canvas.module.scss";
 import { useAppSelector } from "../../app/hooks";
 import { selectImages } from "../../features/gallery";
 import { AsyncImage } from "../AsyncImage";
-import { selectCanvasSize } from "../../features/canvas";
+import {
+  selectCanvasBackgroundColor,
+  selectCanvasSize,
+} from "../../features/canvas";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
 
 export const Canvas = () => {
   const images = useAppSelector(selectImages);
   const stageSize = useAppSelector(selectCanvasSize);
+  const canvasBackgroundColor = useAppSelector(selectCanvasBackgroundColor);
+  const canvasSize = useAppSelector(selectCanvasSize);
   const { lines, handleMouseDown, handleMouseMove, handleMouseUp } =
     useFreehandDrawing();
 
@@ -22,10 +27,20 @@ export const Canvas = () => {
       onMouseup={handleMouseUp}
     >
       <Layer>
+        <Rect
+          width={canvasSize.width}
+          height={canvasSize.height}
+          fill={canvasBackgroundColor}
+        />
+      </Layer>
+
+      <Layer>
         {images.map((image, index) => (
           <AsyncImage image={image} stageSize={stageSize} key={index} />
         ))}
+      </Layer>
 
+      <Layer>
         {lines.map((line, i) => (
           <Line
             key={i}

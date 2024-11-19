@@ -8,11 +8,13 @@ export type Image = string;
 
 export interface CanvasState {
   size: Size;
+  backgroundColor: string;
   tool: Tool | null;
 }
 
 const initialState: CanvasState = {
   size: DEFAULT_CANVAS_SIZE,
+  backgroundColor: "#ffffff",
   tool: null,
 };
 
@@ -25,6 +27,11 @@ export const canvasSlice = createAppSlice({
         state.size = payload;
       }
     ),
+    setCanvasBackgroundColor: create.reducer(
+      (state, { payload }: PayloadAction<string>) => {
+        state.backgroundColor = payload;
+      }
+    ),
     setTool: create.reducer(
       (state, { payload }: PayloadAction<Tool | null>) => {
         state.tool = payload;
@@ -33,10 +40,13 @@ export const canvasSlice = createAppSlice({
   }),
   selectors: {
     selectCanvasSize: ({ size }) => size,
+    selectCanvasBackgroundColor: ({ backgroundColor }) => backgroundColor,
     selectTool: ({ tool }) => tool,
   },
 });
 
-export const { changeCanvasSize, setTool } = canvasSlice.actions;
+export const { changeCanvasSize, setCanvasBackgroundColor, setTool } =
+  canvasSlice.actions;
 
-export const { selectCanvasSize, selectTool } = canvasSlice.selectors;
+export const { selectCanvasSize, selectCanvasBackgroundColor, selectTool } =
+  canvasSlice.selectors;

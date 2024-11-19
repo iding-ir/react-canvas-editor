@@ -1,0 +1,15 @@
+.container {
+  font-size: var(--font-size-md);
+  height: var(--icon-size-md);
+  color: var(--color-dark);
+  background-color: var(--color-lighter);
+  border-radius: var(--border-radius);
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}

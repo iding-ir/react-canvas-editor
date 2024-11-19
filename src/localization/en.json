@@ -12,7 +12,8 @@
     "settings": "Settings"
   },
   "canvas": {
-    "sizeSelector": "Size"
+    "sizeSelector": "Size",
+    "backgroundColor": "Background Color"
   },
   "gallery": {
     "upload": "Upload"
