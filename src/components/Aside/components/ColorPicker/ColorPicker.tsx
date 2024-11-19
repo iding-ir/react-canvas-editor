@@ -3,6 +3,7 @@ import { Button } from "../../../Button";
 import { useState } from "react";
 import ColorIcon from "../../../../assets/icons/color.svg";
 import { Title } from "../../../Title";
+import styles from "./ColorPicker.module.scss";
 
 export const ColorPicker = ({
   title,
@@ -18,7 +19,7 @@ export const ColorPicker = ({
   const [currentColor, setCurrentColor] = useState(color);
 
   return (
-    <>
+    <div className={styles.container}>
       <Title text={title}>{<ColorIcon />}</Title>
 
       <HexColorPicker color={color} onChange={setCurrentColor} />
@@ -28,6 +29,6 @@ export const ColorPicker = ({
         disabled={currentColor === color}
         onClick={() => onChange(currentColor)}
       />
-    </>
+    </div>
   );
 };

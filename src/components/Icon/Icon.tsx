@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import styles from "./Icon.module.scss";
 
 export const Icon = ({
-  size = "lg",
+  size = "xl",
   color = "normal",
   active = false,
   animated = false,
@@ -13,7 +13,7 @@ export const Icon = ({
   onClick,
   children,
 }: {
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   color?: "normal" | "reverse";
   active?: boolean;
   animated?: boolean;
@@ -23,9 +23,11 @@ export const Icon = ({
   children: ReactNode;
 }) => {
   const classNames = clsx(styles.container, {
+    [styles.xs]: size === "xs",
     [styles.sm]: size === "sm",
     [styles.md]: size === "md",
     [styles.lg]: size === "lg",
+    [styles.xl]: size === "xl",
     [styles.normal]: color === "normal",
     [styles.reverse]: color === "reverse",
     [styles.active]: active,

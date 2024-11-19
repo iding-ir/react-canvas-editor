@@ -5,8 +5,8 @@
   gap: var(--spacing-sm);
   justify-content: center;
   align-items: center;
-  width: var(--icon-size-lg);
-  height: var(--icon-size-lg);
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
   overflow: hidden;
   cursor: pointer;
   transition: var(--transition-md);
@@ -28,6 +28,15 @@
     font-size: var(--font-size-xs);
   }
 
+  &.sm {
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+
+    .icon {
+      width: 95%;
+      height: 95%;
+    }
+  }
   &.sm {
     width: var(--icon-size-sm);
     height: var(--icon-size-sm);
@@ -51,6 +60,16 @@
   &.lg {
     width: var(--icon-size-lg);
     height: var(--icon-size-lg);
+
+    .icon {
+      width: 45%;
+      height: 45%;
+    }
+  }
+
+  &.xl {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
 
     .icon {
       width: 30%;

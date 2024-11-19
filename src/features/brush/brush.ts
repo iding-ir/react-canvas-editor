@@ -1,7 +1,4 @@
-export const brushSizes = {
-  sm: 12,
-  md: 18,
-  lg: 24,
-};
+export const MIN_BRUSH_SIZE = 4;
+export const MAX_BRUSH_SIZE = 64;
 
-export const DEFAULT_BRUSH_SIZE = brushSizes.md;
+export const DEFAULT_BRUSH_SIZE = 12;

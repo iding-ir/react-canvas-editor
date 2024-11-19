@@ -2,32 +2,33 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../../app/hooks";
 import { changeBrushSize, selectBrushSize } from "../../brush-slice";
-import { brushSizes } from "../../brush";
-import { Select } from "../../../../components/Select";
-import Icon from "../../../../assets/icons/size.svg";
+import CircleIcon from "../../../../assets/icons/circle.svg";
+import SizeIcon from "../../../../assets/icons/size.svg";
+import { Input } from "../../../../components/Input";
+import { Title } from "../../../../components/Title";
+import styles from "./BrushSizeSelector.module.scss";
+import { MAX_BRUSH_SIZE, MIN_BRUSH_SIZE } from "../../brush";
 
 export const BrushSizeSelector = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const brushSize = useSelector(selectBrushSize);
 
-  const items = Object.values(brushSizes).map((brushSize) => ({
-    value: `${brushSize}`,
-    label: `${brushSize}px`,
-  }));
-
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    dispatch(changeBrushSize(Number(event.target.value)));
-  };
-
   return (
-    <Select
-      id="brush-size-selector"
-      items={items}
-      value={String(brushSize)}
-      icon={<Icon />}
-      label={t("brush.sizeSelector")}
-      onChange={handleChange}
-    />
+    <div className={styles.container}>
+      <Title text={t("brush.sizeSelector.title")}>{<SizeIcon />}</Title>
+
+      <Input
+        type="number"
+        min={MIN_BRUSH_SIZE}
+        max={MAX_BRUSH_SIZE}
+        value={brushSize}
+        icon={<CircleIcon />}
+        placeholder={t("brush.sizeSelector.thickness")}
+        onChange={(event) =>
+          dispatch(changeBrushSize(Number(event.target.value)))
+        }
+      />
+    </div>
   );
 };
