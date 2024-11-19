@@ -14,8 +14,9 @@ export const BrushColorPicker = () => {
 
   return (
     <ColorPicker
+      title={t("brush.color.title")}
       color={color}
-      buttonLabel={t("brush.color")}
+      buttonLabel={t("brush.color.button")}
       onChange={onChange}
     />
   );

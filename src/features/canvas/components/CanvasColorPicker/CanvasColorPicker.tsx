@@ -17,8 +17,9 @@ export const CanvasColorPicker = () => {
 
   return (
     <ColorPicker
+      title={t("canvas.backgroundColor.title")}
       color={color}
-      buttonLabel={t("canvas.backgroundColor")}
+      buttonLabel={t("canvas.backgroundColor.button")}
       onChange={onChange}
     />
   );

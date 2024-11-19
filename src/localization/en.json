@@ -13,11 +13,17 @@
   },
   "canvas": {
     "sizeSelector": "Size",
-    "backgroundColor": "Set color"
+    "backgroundColor": {
+      "title": "Background color",
+      "button": "Set color"
+    }
   },
   "brush": {
     "sizeSelector": "Size",
-    "color": "Set color"
+    "color": {
+      "title": "Color",
+      "button": "Set color"
+    }
   },
   "gallery": {
     "upload": "Upload"
