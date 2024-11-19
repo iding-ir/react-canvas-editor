@@ -12,8 +12,6 @@ export const Canvas = () => {
   const { lines, handleMouseDown, handleMouseMove, handleMouseUp } =
     useFreehandDrawing();
 
-  console.log(lines);
-
   return (
     <Stage
       className={styles.container}

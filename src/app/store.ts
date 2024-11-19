@@ -8,12 +8,23 @@ import {
 import { languageSlice } from "../features/language";
 import { gallerySlice } from "../features/gallery";
 import { canvasSlice } from "../features/canvas";
+import { navigationSlice } from "../features/navigation";
+import { languageListenerMiddleware } from "../features/language/language-middleware";
+import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 
-const rootReducer = combineSlices(languageSlice, gallerySlice, canvasSlice);
+const rootReducer = combineSlices(
+  languageSlice,
+  gallerySlice,
+  canvasSlice,
+  navigationSlice
+);
 
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .prepend(languageListenerMiddleware.middleware)
+      .prepend(navigationListenerMiddleware.middleware),
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

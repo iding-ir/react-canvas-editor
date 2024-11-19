@@ -25,9 +25,11 @@ export const canvasSlice = createAppSlice({
         state.size = payload;
       }
     ),
-    setTool: create.reducer((state, { payload }: PayloadAction<Tool>) => {
-      state.tool = payload;
-    }),
+    setTool: create.reducer(
+      (state, { payload }: PayloadAction<Tool | null>) => {
+        state.tool = payload;
+      }
+    ),
   }),
   selectors: {
     selectCanvasSize: ({ size }) => size,

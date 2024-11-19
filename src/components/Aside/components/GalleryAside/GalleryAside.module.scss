@@ -1,0 +1,23 @@
+.container {
+  .upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-lighter);
+    color: var(--color-dark);
+    font-size: var(--font-size-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    border-radius: var(--border-radius);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-sm);
+
+    &:hover {
+      color: var(--color-secondary-md);
+    }
+  }
+}

@@ -59,7 +59,7 @@
   }
 
   &.normal {
-    background-color: var(--color-light);
+    background-color: var(--color-lighter);
 
     .icon * {
       stroke: var(--color-primary-lg);
@@ -69,7 +69,18 @@
       color: var(--color-primary-lg);
     }
 
-    &.active,
+    &.active {
+      background-color: var(--color-light);
+
+      .icon * {
+        stroke: var(--color-secondary-md);
+      }
+
+      .text {
+        color: var(--color-secondary-md);
+      }
+    }
+
     &:hover {
       background-color: var(--color-secondary-md);
 

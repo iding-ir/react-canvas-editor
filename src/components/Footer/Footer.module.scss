@@ -5,5 +5,6 @@
   font-size: var(--font-size-xs);
   padding: var(--spacing-md);
   text-align: center;
-  background-color: var(--color-light);
+  border-top: var(--border-thickness-md) solid var(--color-primary-sm);
+  background-color: var(--color-lighter);
 }

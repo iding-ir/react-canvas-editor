@@ -3,12 +3,18 @@
     "title": "Canvas Editor"
   },
   "navigation": {
-    "upload": "Upload",
+    "canvas": "Canvas",
+    "gallery": "Gallery",
     "brush": "Brush",
     "eraser": "Eraser",
-    "text": "Text"
+    "text": "Text",
+    "download": "Download",
+    "settings": "Settings"
   },
   "canvas": {
     "sizeSelector": "Size"
+  },
+  "gallery": {
+    "upload": "Upload"
   }
 }

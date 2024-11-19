@@ -9,4 +9,23 @@
   justify-content: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-sm);
+  border-top-width: var(--border-thickness-md);
+  border-style: solid;
+  border-image: linear-gradient(
+      to right,
+      var(--color-secondary-md),
+      var(--color-primary-md)
+    )
+    100% 1;
+  background-color: var(--color-lighter);
+
+  @media only screen and (min-width: $breakpoint-lg) {
+    border-left-width: var(--border-thickness-md);
+    border-image: linear-gradient(
+        to bottom,
+        var(--color-secondary-md),
+        var(--color-primary-md)
+      )
+      1 100%;
+  }
 }

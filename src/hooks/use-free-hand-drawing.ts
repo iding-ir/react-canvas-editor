@@ -28,7 +28,7 @@ export const useFreehandDrawing = () => {
     const point = stage?.getPointerPosition();
     let lastLine = lines[lines.length - 1];
 
-    if (!point) {
+    if (!point || !lastLine) {
       return;
     }
 
