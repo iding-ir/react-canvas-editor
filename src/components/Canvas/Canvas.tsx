@@ -8,12 +8,15 @@ import {
   selectCanvasSize,
 } from "../../features/canvas";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
+import { selectBrushColor, selectBrushSize } from "../../features/brush";
 
 export const Canvas = () => {
   const images = useAppSelector(selectImages);
   const stageSize = useAppSelector(selectCanvasSize);
   const canvasBackgroundColor = useAppSelector(selectCanvasBackgroundColor);
   const canvasSize = useAppSelector(selectCanvasSize);
+  const brushSize = useAppSelector(selectBrushSize);
+  const brushColor = useAppSelector(selectBrushColor);
   const { lines, handleMouseDown, handleMouseMove, handleMouseUp } =
     useFreehandDrawing();
 
@@ -45,8 +48,8 @@ export const Canvas = () => {
           <Line
             key={i}
             points={line.points}
-            stroke="#df4b26"
-            strokeWidth={5}
+            stroke={brushColor}
+            strokeWidth={brushSize}
             tension={0.5}
             lineCap="round"
             lineJoin="round"

@@ -1,16 +1,16 @@
 import { HexColorPicker } from "react-colorful";
 import { Button } from "../../../Button";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 export const ColorPicker = ({
   color,
+  buttonLabel,
   onChange,
 }: {
   color: string;
+  buttonLabel: string;
   onChange: (color: string) => void;
 }) => {
-  const { t } = useTranslation();
   const [currentColor, setCurrentColor] = useState(color);
 
   return (
@@ -18,7 +18,7 @@ export const ColorPicker = ({
       <HexColorPicker color={color} onChange={setCurrentColor} />
 
       <Button
-        label={t("canvas.backgroundColor")}
+        label={buttonLabel}
         disabled={currentColor === color}
         onClick={() => onChange(currentColor)}
       />

@@ -11,11 +11,13 @@ import { canvasSlice } from "../features/canvas";
 import { navigationSlice } from "../features/navigation";
 import { languageListenerMiddleware } from "../features/language/language-middleware";
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
+import { brushSlice } from "../features/brush";
 
 const rootReducer = combineSlices(
   languageSlice,
   gallerySlice,
   canvasSlice,
+  brushSlice,
   navigationSlice
 );
 
