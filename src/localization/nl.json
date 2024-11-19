@@ -1,0 +1,29 @@
+{
+  "header": {
+    "title": "Canvas-editor"
+  },
+  "navigation": {
+    "canvas": "Canvas",
+    "gallery": "Galerij",
+    "brush": "Borstel",
+    "eraser": "Gom",
+    "text": "Tekst",
+    "download": "Download",
+    "settings": "Instellingen"
+  },
+  "canvas": {
+    "sizeSelector": "Maat"
+  },
+  "gallery": {
+    "upload": "Uploaden"
+  },
+  "settings": {
+    "language": {
+      "label": "Taal",
+      "options": {
+        "en": "Engels",
+        "nl": "Nederlands"
+      }
+    }
+  }
+}

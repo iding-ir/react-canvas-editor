@@ -16,5 +16,14 @@
   },
   "gallery": {
     "upload": "Upload"
+  },
+  "settings": {
+    "language": {
+      "label": "Language",
+      "options": {
+        "en": "English",
+        "nl": "Dutch"
+      }
+    }
   }
 }
