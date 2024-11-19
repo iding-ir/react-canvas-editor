@@ -1,12 +1,20 @@
-import { useRef, useState } from "react";
-import { useAppSelector } from "../app/hooks";
-import { selectTool } from "../features/canvas";
+import { useRef } from "react";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import Konva from "konva";
+import {
+  addLine,
+  addPoint,
+  selectBrushColor,
+  selectBrushSize,
+} from "../features/brush";
+import { selectTool } from "../features/tool";
 
 export const useFreehandDrawing = () => {
+  const dispatch = useAppDispatch();
   const tool = useAppSelector(selectTool);
+  const size = useAppSelector(selectBrushSize);
+  const color = useAppSelector(selectBrushColor);
   const isDrawing = useRef(false);
-  const [lines, setLines] = useState<{ tool: string; points: number[] }[]>([]);
 
   const handleMouseDown = (event: Konva.KonvaEventObject<MouseEvent>) => {
     isDrawing.current = true;
@@ -17,7 +25,7 @@ export const useFreehandDrawing = () => {
       return;
     }
 
-    setLines([...lines, { tool, points: [pos.x, pos.y] }]);
+    dispatch(addLine({ size, color, tool, points: [pos.x, pos.y] }));
   };
 
   const handleMouseMove = (event: Konva.KonvaEventObject<MouseEvent>) => {
@@ -26,21 +34,17 @@ export const useFreehandDrawing = () => {
     }
     const stage = event.target.getStage();
     const point = stage?.getPointerPosition();
-    let lastLine = lines[lines.length - 1];
 
-    if (!point || !lastLine) {
+    if (!point) {
       return;
     }
 
-    lastLine.points = lastLine.points.concat([point.x, point.y]);
-
-    lines.splice(lines.length - 1, 1, lastLine);
-    setLines(lines.concat());
+    dispatch(addPoint([point.x, point.y]));
   };
 
   const handleMouseUp = () => {
     isDrawing.current = false;
   };
 
-  return { lines, handleMouseDown, handleMouseMove, handleMouseUp };
+  return { handleMouseDown, handleMouseMove, handleMouseUp };
 };

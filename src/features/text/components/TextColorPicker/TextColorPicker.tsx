@@ -8,16 +8,11 @@ export const TextColorPicker = () => {
   const dispatch = useAppDispatch();
   const color = useAppSelector(selectTextColor);
 
-  const onChange = (color: string) => {
-    dispatch(setTextColor(color));
-  };
-
   return (
     <ColorPicker
       title={t("text.color.title")}
       color={color}
-      buttonLabel={t("text.color.button")}
-      onChange={onChange}
+      onChange={(color: string) => dispatch(setTextColor(color))}
     />
   );
 };

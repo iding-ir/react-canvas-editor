@@ -13,14 +13,16 @@ import { languageListenerMiddleware } from "../features/language/language-middle
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { brushSlice } from "../features/brush";
 import { textSlice } from "../features/text";
+import { toolSlice } from "../features/tool";
 
 const rootReducer = combineSlices(
+  navigationSlice,
   languageSlice,
   gallerySlice,
   canvasSlice,
   brushSlice,
   textSlice,
-  navigationSlice
+  toolSlice
 );
 
 export const store = configureStore({

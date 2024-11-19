@@ -5,43 +5,48 @@ import { selectImages } from "../../features/gallery";
 import { AsyncImage } from "../AsyncImage";
 import {
   selectCanvasBackgroundColor,
-  selectCanvasSize,
+  selectCanvasHeight,
+  selectCanvasWidth,
 } from "../../features/canvas";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
-import { selectBrushColor, selectBrushSize } from "../../features/brush";
 import { selectTexts } from "../../features/text";
+import { selectLines } from "../../features/brush";
 
 export const Canvas = () => {
   const images = useAppSelector(selectImages);
-  const stageSize = useAppSelector(selectCanvasSize);
+  const canvasWidth = useAppSelector(selectCanvasWidth);
+  const canvasHeight = useAppSelector(selectCanvasHeight);
   const canvasBackgroundColor = useAppSelector(selectCanvasBackgroundColor);
-  const canvasSize = useAppSelector(selectCanvasSize);
-  const brushSize = useAppSelector(selectBrushSize);
-  const brushColor = useAppSelector(selectBrushColor);
   const texts = useAppSelector(selectTexts);
-  const { lines, handleMouseDown, handleMouseMove, handleMouseUp } =
+  const lines = useAppSelector(selectLines);
+  const { handleMouseDown, handleMouseMove, handleMouseUp } =
     useFreehandDrawing();
 
   return (
     <Stage
       className={styles.container}
-      width={stageSize.width}
-      height={stageSize.height}
+      width={canvasWidth}
+      height={canvasHeight}
       onMouseDown={handleMouseDown}
       onMousemove={handleMouseMove}
       onMouseup={handleMouseUp}
     >
       <Layer>
         <Rect
-          width={canvasSize.width}
-          height={canvasSize.height}
+          width={canvasWidth}
+          height={canvasHeight}
           fill={canvasBackgroundColor}
         />
       </Layer>
 
       <Layer>
         {images.map((image, index) => (
-          <AsyncImage image={image} stageSize={stageSize} key={index} />
+          <AsyncImage
+            image={image}
+            canvasWidth={canvasWidth}
+            canvasHeight={canvasHeight}
+            key={index}
+          />
         ))}
       </Layer>
 
@@ -50,8 +55,8 @@ export const Canvas = () => {
           <Line
             key={i}
             points={line.points}
-            stroke={brushColor}
-            strokeWidth={brushSize}
+            stroke={line.color}
+            strokeWidth={line.size}
             tension={0.5}
             lineCap="round"
             lineJoin="round"

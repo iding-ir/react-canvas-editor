@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { getImageDisplaySize } from "../../methods/get-image-display-size";
 import { Image } from "react-konva";
-import { Size } from "../../types";
 
 export const AsyncImage = ({
   image,
-  stageSize,
+  canvasWidth,
+  canvasHeight,
 }: {
   image: string;
-  stageSize: Size;
+  canvasWidth: number;
+  canvasHeight: number;
 }) => {
   const [htmlElement, setHtmlElement] = useState<HTMLImageElement>();
 
@@ -31,7 +32,11 @@ export const AsyncImage = ({
     return null;
   }
 
-  const displaySize = getImageDisplaySize(htmlElement, stageSize);
+  const displaySize = getImageDisplaySize(
+    htmlElement,
+    canvasWidth,
+    canvasHeight
+  );
 
   return (
     <Image image={img} width={displaySize.width} height={displaySize.height} />

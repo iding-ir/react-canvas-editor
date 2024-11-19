@@ -1,21 +1,22 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-import { Size } from "../../types";
-import { DEFAULT_CANVAS_WIDTH, DEFAULT_CANVAS_HEIGHT, Tool } from "./canvas";
-
-export type Image = string;
+import {
+  DEFAULT_CANVAS_WIDTH,
+  DEFAULT_CANVAS_HEIGHT,
+  DEFAULT_CANVAS_BACKGROUND_COLOR,
+} from "./canvas";
 
 export interface CanvasState {
-  size: Size;
+  width: number;
+  height: number;
   backgroundColor: string;
-  tool: Tool | null;
 }
 
 const initialState: CanvasState = {
-  size: { width: DEFAULT_CANVAS_WIDTH, height: DEFAULT_CANVAS_HEIGHT },
-  backgroundColor: "#ffffff",
-  tool: null,
+  width: DEFAULT_CANVAS_WIDTH,
+  height: DEFAULT_CANVAS_HEIGHT,
+  backgroundColor: DEFAULT_CANVAS_BACKGROUND_COLOR,
 };
 
 export const canvasSlice = createAppSlice({
@@ -24,12 +25,12 @@ export const canvasSlice = createAppSlice({
   reducers: (create) => ({
     changeCanvasWidth: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
-        state.size.width = payload;
+        state.width = payload;
       }
     ),
     changeCanvasHeight: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
-        state.size.height = payload;
+        state.height = payload;
       }
     ),
     setCanvasBackgroundColor: create.reducer(
@@ -37,16 +38,11 @@ export const canvasSlice = createAppSlice({
         state.backgroundColor = payload;
       }
     ),
-    setTool: create.reducer(
-      (state, { payload }: PayloadAction<Tool | null>) => {
-        state.tool = payload;
-      }
-    ),
   }),
   selectors: {
-    selectCanvasSize: ({ size }) => size,
+    selectCanvasWidth: ({ width }) => width,
+    selectCanvasHeight: ({ height }) => height,
     selectCanvasBackgroundColor: ({ backgroundColor }) => backgroundColor,
-    selectTool: ({ tool }) => tool,
   },
 });
 
@@ -54,8 +50,10 @@ export const {
   changeCanvasWidth,
   changeCanvasHeight,
   setCanvasBackgroundColor,
-  setTool,
 } = canvasSlice.actions;
 
-export const { selectCanvasSize, selectCanvasBackgroundColor, selectTool } =
-  canvasSlice.selectors;
+export const {
+  selectCanvasWidth,
+  selectCanvasHeight,
+  selectCanvasBackgroundColor,
+} = canvasSlice.selectors;

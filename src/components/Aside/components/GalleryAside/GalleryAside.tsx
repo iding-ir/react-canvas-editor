@@ -2,16 +2,15 @@ import { useTranslation } from "react-i18next";
 import { Uploader } from "../../../../features/gallery/components/Uploader";
 import { Gallery } from "../../../Gallery";
 import asideStyles from "../Aside.module.scss";
-import styles from "./GalleryAside.module.scss";
-import clsx from "clsx";
+import { Button } from "../../../Button";
 
 export const GalleryAside = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={clsx(asideStyles.container, styles.container)}>
+    <div className={asideStyles.container}>
       <Uploader>
-        <button className={styles.upload}>{t("gallery.upload")}</button>
+        <Button onClick={() => null} label={t("gallery.upload")} />
       </Uploader>
 
       <Gallery />

@@ -2,9 +2,10 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../../app/hooks";
 import {
-  selectCanvasSize,
   changeCanvasWidth,
   changeCanvasHeight,
+  selectCanvasWidth,
+  selectCanvasHeight,
 } from "../../canvas-slice";
 import WidthIcon from "../../../../assets/icons/width.svg";
 import HeightIcon from "../../../../assets/icons/height.svg";
@@ -22,8 +23,8 @@ import {
 export const CanvasSizeSelector = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const canvasSize = useSelector(selectCanvasSize);
-  const { width, height } = canvasSize;
+  const width = useSelector(selectCanvasWidth);
+  const height = useSelector(selectCanvasHeight);
 
   return (
     <div className={styles.container}>

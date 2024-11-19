@@ -8,16 +8,11 @@ export const BrushColorPicker = () => {
   const dispatch = useAppDispatch();
   const color = useAppSelector(selectBrushColor);
 
-  const onChange = (color: string) => {
-    dispatch(setBrushColor(color));
-  };
-
   return (
     <ColorPicker
       title={t("brush.color.title")}
       color={color}
-      buttonLabel={t("brush.color.button")}
-      onChange={onChange}
+      onChange={(color: string) => dispatch(setBrushColor(color))}
     />
   );
 };
