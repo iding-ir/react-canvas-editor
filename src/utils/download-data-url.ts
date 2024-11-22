@@ -1,4 +1,4 @@
-export function exportDataUrl(dataUrl: string, filename: string): void {
+export function downloadDataUrl(dataUrl: string, filename: string): void {
   const link = document.createElement("a");
   link.href = dataUrl;
   link.download = filename;
