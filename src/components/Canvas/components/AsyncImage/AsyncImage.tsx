@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { getImageDisplaySize } from "../../methods/get-image-display-size";
-import { Image } from "react-konva";
+
+import { getImageDisplaySize } from "../../../../methods/get-image-display-size";
+import { ResizableImage } from "../ResizableImage/ResizableImage";
 
 export const AsyncImage = ({
+  id,
   image,
   canvasWidth,
   canvasHeight,
 }: {
+  id: string;
   image: string;
   canvasWidth: number;
   canvasHeight: number;
@@ -32,13 +35,18 @@ export const AsyncImage = ({
     return null;
   }
 
-  const displaySize = getImageDisplaySize(
+  const { width, height } = getImageDisplaySize(
     htmlElement,
     canvasWidth,
-    canvasHeight
+    canvasHeight,
   );
 
   return (
-    <Image image={img} width={displaySize.width} height={displaySize.height} />
+    <ResizableImage
+      id={id}
+      image={img}
+      initialWidth={width}
+      initialHeight={height}
+    />
   );
 };

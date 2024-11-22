@@ -5,15 +5,14 @@ import {
   configureStore,
 } from "@reduxjs/toolkit";
 
-import { languageSlice } from "../features/language";
-import { gallerySlice } from "../features/gallery";
-import { canvasSlice } from "../features/canvas";
-import { navigationSlice } from "../features/navigation";
-import { languageListenerMiddleware } from "../features/language/language-middleware";
-import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { brushSlice } from "../features/brush";
+import { canvasSlice } from "../features/canvas";
+import { gallerySlice } from "../features/gallery";
+import { languageSlice } from "../features/language";
+import { languageListenerMiddleware } from "../features/language/language-middleware";
+import { navigationSlice } from "../features/navigation";
+import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { textSlice } from "../features/text";
-import { toolSlice } from "../features/tool";
 
 const rootReducer = combineSlices(
   navigationSlice,
@@ -22,7 +21,6 @@ const rootReducer = combineSlices(
   canvasSlice,
   brushSlice,
   textSlice,
-  toolSlice
 );
 
 export const store = configureStore({

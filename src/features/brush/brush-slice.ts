@@ -40,23 +40,29 @@ export const brushSlice = createAppSlice({
     changeBrushSize: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
         state.size = payload;
-      }
+      },
     ),
     setBrushColor: create.reducer(
       (state, { payload }: PayloadAction<string>) => {
         state.color = payload;
-      }
+      },
+    ),
+    setTool: create.reducer(
+      (state, { payload }: PayloadAction<string | null>) => {
+        state.tool = payload;
+      },
     ),
   }),
   selectors: {
     selectLines: ({ lines }) => lines,
     selectBrushSize: ({ size }) => size,
     selectBrushColor: ({ color }) => color,
+    selectTool: ({ tool }) => tool,
   },
 });
 
-export const { addLine, addPoint, changeBrushSize, setBrushColor } =
+export const { addLine, addPoint, changeBrushSize, setBrushColor, setTool } =
   brushSlice.actions;
 
-export const { selectLines, selectBrushSize, selectBrushColor } =
+export const { selectLines, selectBrushSize, selectBrushColor, selectTool } =
   brushSlice.selectors;

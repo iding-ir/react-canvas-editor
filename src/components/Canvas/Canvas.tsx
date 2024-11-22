@@ -1,18 +1,25 @@
-import { Layer, Line, Rect, Stage, Text } from "react-konva";
-import styles from "./Canvas.module.scss";
-import { useAppSelector } from "../../app/hooks";
-import { selectImages } from "../../features/gallery";
-import { AsyncImage } from "../AsyncImage";
+import Konva from "konva";
+import { Stage } from "react-konva";
+
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { selectLines, selectTool } from "../../features/brush";
 import {
   selectCanvasBackgroundColor,
   selectCanvasHeight,
   selectCanvasWidth,
+  setCanvasSelectedItem,
 } from "../../features/canvas";
-import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
+import { selectImages } from "../../features/gallery";
 import { selectTexts } from "../../features/text";
-import { selectLines } from "../../features/brush";
+import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
+import styles from "./Canvas.module.scss";
+import { Background } from "./components/Background";
+import { Images } from "./components/Images";
+import { Lines } from "./components/Lines";
+import { Texts } from "./components/Texts";
 
 export const Canvas = () => {
+  const dispatch = useAppDispatch();
   const images = useAppSelector(selectImages);
   const canvasWidth = useAppSelector(selectCanvasWidth);
   const canvasHeight = useAppSelector(selectCanvasHeight);
@@ -21,62 +28,42 @@ export const Canvas = () => {
   const lines = useAppSelector(selectLines);
   const { handleMouseDown, handleMouseMove, handleMouseUp } =
     useFreehandDrawing();
+  const tool = useAppSelector(selectTool);
+  const isInteractive = !tool;
+
+  const checkDeselect = (
+    event: Konva.KonvaEventObject<MouseEvent | TouchEvent>,
+  ) => {
+    if (event.target === event.target.getStage()) {
+      dispatch(setCanvasSelectedItem(null));
+    }
+  };
 
   return (
     <Stage
       className={styles.container}
       width={canvasWidth}
       height={canvasHeight}
-      onMouseDown={handleMouseDown}
+      onTouchStart={isInteractive ? checkDeselect : handleMouseDown}
+      onMouseDown={isInteractive ? checkDeselect : handleMouseDown}
       onMousemove={handleMouseMove}
       onMouseup={handleMouseUp}
     >
-      <Layer>
-        <Rect
-          width={canvasWidth}
-          height={canvasHeight}
-          fill={canvasBackgroundColor}
-        />
-      </Layer>
+      <Background
+        width={canvasWidth}
+        height={canvasHeight}
+        color={canvasBackgroundColor}
+      />
 
-      <Layer>
-        {images.map((image, index) => (
-          <AsyncImage
-            image={image}
-            canvasWidth={canvasWidth}
-            canvasHeight={canvasHeight}
-            key={index}
-          />
-        ))}
-      </Layer>
+      <Images
+        images={images}
+        canvasWidth={canvasWidth}
+        canvasHeight={canvasHeight}
+      />
 
-      <Layer>
-        {lines.map((line, i) => (
-          <Line
-            key={i}
-            points={line.points}
-            stroke={line.color}
-            strokeWidth={line.size}
-            tension={0.5}
-            lineCap="round"
-            lineJoin="round"
-            globalCompositeOperation={
-              line.tool === "eraser" ? "destination-out" : "source-over"
-            }
-          />
-        ))}
-      </Layer>
+      <Texts texts={texts} />
 
-      <Layer>
-        {texts.map((text, i) => (
-          <Text
-            key={i}
-            text={text.text}
-            textSize={text.size}
-            fill={text.color}
-          />
-        ))}
-      </Layer>
+      <Lines lines={lines} />
     </Stage>
   );
 };
