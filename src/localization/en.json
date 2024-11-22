@@ -8,7 +8,7 @@
     "line": "Freehand",
     "eraser": "Eraser",
     "text": "Text",
-    "download": "Download",
+    "export": "Export",
     "settings": "Settings"
   },
   "canvas": {
@@ -52,6 +52,13 @@
   },
   "gallery": {
     "upload": "Upload"
+  },
+  "export": {
+    "title": "Choose export format",
+    "download": "Download",
+    "image": "Image",
+    "png": "PNG",
+    "pdf": "PDF"
   },
   "settings": {
     "language": {

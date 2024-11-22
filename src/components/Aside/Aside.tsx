@@ -6,7 +6,7 @@ import {
 } from "../../features/navigation";
 import styles from "./Aside.module.scss";
 import { CanvasAside } from "./components/CanvasAside";
-import { DownloadAside } from "./components/DownloadAside";
+import { ExportAside } from "./components/ExportAside/ExportAside";
 import { GalleryAside } from "./components/GalleryAside";
 import { LineAside } from "./components/LineAside";
 import { SettingsAside } from "./components/SettingsAside";
@@ -28,8 +28,8 @@ const getAside = (currentNavigation: NavigationItem) => {
       return <LineAside />;
     case NAVIGATION_ITEMS.text:
       return <TextAside />;
-    case NAVIGATION_ITEMS.download:
-      return <DownloadAside />;
+    case NAVIGATION_ITEMS.export:
+      return <ExportAside />;
     case NAVIGATION_ITEMS.settings:
       return <SettingsAside />;
     default:

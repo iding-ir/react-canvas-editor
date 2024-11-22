@@ -1,5 +1,5 @@
 import CanvasIcon from "../../assets/icons/canvas.svg";
-import DownloadIcon from "../../assets/icons/download.svg";
+import ExportIcon from "../../assets/icons/export.svg";
 import GalleryIcon from "../../assets/icons/gallery.svg";
 import LineIcon from "../../assets/icons/line.svg";
 import SettingsIcon from "../../assets/icons/settings.svg";
@@ -10,7 +10,7 @@ export enum NAVIGATION_ITEMS {
   gallery = "gallery",
   line = "line",
   text = "text",
-  download = "download",
+  export = "export",
   settings = "settings",
 }
 
@@ -40,9 +40,9 @@ export const navigationItems = [
     text: "navigation.text",
   },
   {
-    id: NAVIGATION_ITEMS.download,
-    icon: <DownloadIcon />,
-    text: "navigation.download",
+    id: NAVIGATION_ITEMS.export,
+    icon: <ExportIcon />,
+    text: "navigation.export",
   },
   {
     id: NAVIGATION_ITEMS.settings,

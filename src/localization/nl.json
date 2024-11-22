@@ -8,7 +8,7 @@
     "line": "Vrijhand",
     "eraser": "Gom",
     "text": "Tekst",
-    "download": "Download",
+    "export": "Exporteren",
     "settings": "Instellingen"
   },
   "canvas": {
@@ -16,6 +16,13 @@
   },
   "gallery": {
     "upload": "Uploaden"
+  },
+  "export": {
+    "title": "Kies exportformaat",
+    "download": "Download",
+    "image": "Afbeelding",
+    "png": "PNG",
+    "pdf": "PDF"
   },
   "settings": {
     "language": {

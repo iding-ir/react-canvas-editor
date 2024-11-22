@@ -9,6 +9,7 @@ import {
 import { selectImages } from "../../features/gallery";
 import { selectLines } from "../../features/line";
 import { selectTexts } from "../../features/text";
+import { useExportContext } from "../../hooks/use-export";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
 import styles from "./Canvas.module.scss";
 import { Background } from "./components/Background";
@@ -24,9 +25,11 @@ export const Canvas = () => {
   const texts = useAppSelector(selectTexts);
   const lines = useAppSelector(selectLines);
   const { handleStart, handleMove, handleEnd } = useFreehandDrawing();
+  const { stageRef } = useExportContext();
 
   return (
     <Stage
+      ref={stageRef}
       className={styles.container}
       width={canvasWidth}
       height={canvasHeight}
