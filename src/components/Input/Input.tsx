@@ -1,4 +1,5 @@
-import { ChangeEvent, ReactNode } from "react";
+import { ChangeEvent, KeyboardEvent, ReactNode } from "react";
+
 import styles from "./Input.module.scss";
 
 export const Input = ({
@@ -10,6 +11,7 @@ export const Input = ({
   placeholder,
   disabled,
   onChange,
+  onKeyDown,
 }: {
   type?: string;
   value: string | number;
@@ -19,6 +21,7 @@ export const Input = ({
   placeholder: string;
   disabled?: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }) => {
   return (
     <div className={styles.container}>
@@ -32,6 +35,7 @@ export const Input = ({
         disabled={disabled}
         className={styles.container}
         onChange={onChange}
+        onKeyDown={onKeyDown}
         placeholder={placeholder}
       />
     </div>

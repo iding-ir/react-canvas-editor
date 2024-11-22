@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { v4 as uuidv4 } from "uuid";
 
@@ -21,9 +21,19 @@ export const TextInput = () => {
     setText(text);
   };
 
-  const onClick = (content: string) => {
-    dispatch(addText({ id: uuidv4(), content, color, size }));
+  const submit = () => {
+    dispatch(addText({ id: uuidv4(), content: text, color, size }));
     setText("");
+  };
+
+  const onClick = () => {
+    submit();
+  };
+
+  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      submit();
+    }
   };
 
   return (
@@ -35,12 +45,13 @@ export const TextInput = () => {
         icon={<TextIcon />}
         placeholder={t("text.input.placeholder")}
         onChange={(event) => onChange(event.target.value)}
+        onKeyDown={(event) => onKeyDown(event)}
       />
 
       <Button
         label={t("text.input.button")}
         disabled={!text}
-        onClick={() => onClick(text)}
+        onClick={() => onClick()}
       />
     </div>
   );

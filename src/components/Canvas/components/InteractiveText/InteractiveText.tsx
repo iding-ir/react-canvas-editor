@@ -14,7 +14,7 @@ export const InteractiveText = ({ text }: { text: TextType }) => {
       <Text
         id={id}
         text={content}
-        textSize={size}
+        fontSize={size}
         fill={color}
         draggable={draggable}
       />
