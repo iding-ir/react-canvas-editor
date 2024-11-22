@@ -4,7 +4,8 @@ import { createAppSlice } from "../createAppSlice";
 import { DEFAULT_TEXT_COLOR, DEFAULT_TEXT_SIZE } from "./text";
 
 export type Text = {
-  text: string;
+  id: string;
+  content: string;
   size: number;
   color: string;
 };
@@ -31,12 +32,12 @@ export const textSlice = createAppSlice({
     changeTextSize: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
         state.size = payload;
-      }
+      },
     ),
     setTextColor: create.reducer(
       (state, { payload }: PayloadAction<string>) => {
         state.color = payload;
-      }
+      },
     ),
   }),
   selectors: {

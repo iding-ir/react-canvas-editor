@@ -5,11 +5,10 @@ import {
   selectCurrentNavigation,
 } from "../../features/navigation";
 import styles from "./Aside.module.scss";
-import { BrushAside } from "./components/BrushAside";
 import { CanvasAside } from "./components/CanvasAside";
 import { DownloadAside } from "./components/DownloadAside";
-import { EraserAside } from "./components/EraserAside";
 import { GalleryAside } from "./components/GalleryAside";
+import { LineAside } from "./components/LineAside";
 import { SettingsAside } from "./components/SettingsAside";
 import { TextAside } from "./components/TextAside";
 
@@ -25,10 +24,8 @@ const getAside = (currentNavigation: NavigationItem) => {
       return <CanvasAside />;
     case NAVIGATION_ITEMS.gallery:
       return <GalleryAside />;
-    case NAVIGATION_ITEMS.brush:
-      return <BrushAside />;
-    case NAVIGATION_ITEMS.eraser:
-      return <EraserAside />;
+    case NAVIGATION_ITEMS.line:
+      return <LineAside />;
     case NAVIGATION_ITEMS.text:
       return <TextAside />;
     case NAVIGATION_ITEMS.download:

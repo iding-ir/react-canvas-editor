@@ -1,21 +1,23 @@
 import Konva from "konva";
 import { Image } from "react-konva";
 
-import { useAppSelector } from "../../../../app/hooks.ts";
-import { selectTool } from "../../../../features/brush/brush-slice.ts";
-import { useResize } from "../../../../hooks/use-resize.tsx";
+import { useAppSelector } from "../../../../app/hooks";
+import { ImageType } from "../../../../features/gallery";
+import { selectTool } from "../../../../features/line/line-slice";
+import { useResize } from "../../../../hooks/use-resize";
 
 export const ResizableImage = ({
-  id,
+  img,
   image,
   initialWidth,
   initialHeight,
 }: {
-  id: string;
-  image: HTMLImageElement;
+  img: HTMLImageElement;
+  image: ImageType;
   initialWidth: number;
   initialHeight: number;
 }) => {
+  const { id } = image;
   const tool = useAppSelector(selectTool);
   const draggable = !tool;
   const {
@@ -35,7 +37,7 @@ export const ResizableImage = ({
       <Image
         id={id}
         ref={itemRef}
-        image={image}
+        image={img}
         x={x}
         y={y}
         width={width}

@@ -7,7 +7,7 @@ export const Texts = ({ texts }: { texts: TextType[] }) => {
   return (
     <Layer>
       {texts.map((text, i) => (
-        <InteractiveText key={i} id={`text-${i}`} text={text} />
+        <InteractiveText key={i} text={text} />
       ))}
     </Layer>
   );

@@ -1,12 +1,14 @@
-import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { Input } from "../../../../components/Input";
-import styles from "./TextInput.module.scss";
-import { Button } from "../../../../components/Button";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { v4 as uuidv4 } from "uuid";
+
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import TextIcon from "../../../../assets/icons/text.svg";
-import { addText, selectTextColor, selectTextSize } from "../../text-slice";
+import { Button } from "../../../../components/Button";
+import { Input } from "../../../../components/Input";
 import { Title } from "../../../../components/Title";
+import { addText, selectTextColor, selectTextSize } from "../../text-slice";
+import styles from "./TextInput.module.scss";
 
 export const TextInput = () => {
   const { t } = useTranslation();
@@ -19,8 +21,8 @@ export const TextInput = () => {
     setText(text);
   };
 
-  const onClick = (text: string) => {
-    dispatch(addText({ text, color, size }));
+  const onClick = (content: string) => {
+    dispatch(addText({ id: uuidv4(), content, color, size }));
     setText("");
   };
 

@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
 
+import { ImageType } from "../../../../features/gallery";
 import { getImageDisplaySize } from "../../../../methods/get-image-display-size";
 import { ResizableImage } from "../ResizableImage/ResizableImage";
 
 export const AsyncImage = ({
-  id,
   image,
   canvasWidth,
   canvasHeight,
 }: {
-  id: string;
-  image: string;
+  image: ImageType;
   canvasWidth: number;
   canvasHeight: number;
 }) => {
+  const { src } = image;
   const [htmlElement, setHtmlElement] = useState<HTMLImageElement>();
 
   const img = new window.Image();
-  img.src = image;
+  img.src = src;
 
   useEffect(() => {
     const handleLoad = () => {
@@ -43,8 +43,8 @@ export const AsyncImage = ({
 
   return (
     <ResizableImage
-      id={id}
-      image={img}
+      img={img}
+      image={image}
       initialWidth={width}
       initialHeight={height}
     />

@@ -5,11 +5,11 @@ import {
   configureStore,
 } from "@reduxjs/toolkit";
 
-import { brushSlice } from "../features/brush";
 import { canvasSlice } from "../features/canvas";
 import { gallerySlice } from "../features/gallery";
 import { languageSlice } from "../features/language";
 import { languageListenerMiddleware } from "../features/language/language-middleware";
+import { lineSlice } from "../features/line";
 import { navigationSlice } from "../features/navigation";
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { textSlice } from "../features/text";
@@ -19,7 +19,7 @@ const rootReducer = combineSlices(
   languageSlice,
   gallerySlice,
   canvasSlice,
-  brushSlice,
+  lineSlice,
   textSlice,
 );
 

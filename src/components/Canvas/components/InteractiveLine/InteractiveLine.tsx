@@ -1,18 +1,10 @@
 import { Line } from "react-konva";
 
-import { useAppSelector } from "../../../../app/hooks.ts";
-import {
-  Line as LineType,
-  selectTool,
-} from "../../../../features/brush/index.ts";
+import { useAppSelector } from "../../../../app/hooks";
+import { LineType, selectTool } from "../../../../features/line/index";
 
-export const InteractiveLine = ({
-  id,
-  line,
-}: {
-  id: string;
-  line: LineType;
-}) => {
+export const InteractiveLine = ({ line }: { line: LineType }) => {
+  const { id, size, color, points } = line;
   const tool = useAppSelector(selectTool);
   const draggable = !tool;
 
@@ -20,9 +12,9 @@ export const InteractiveLine = ({
     <>
       <Line
         id={id}
-        points={line.points}
-        stroke={line.color}
-        strokeWidth={line.size}
+        points={points}
+        stroke={color}
+        strokeWidth={size}
         tension={0.5}
         lineCap="round"
         lineJoin="round"

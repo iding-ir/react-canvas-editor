@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
+
 import { Uploader } from "../../../../features/gallery/components/Uploader";
+import { Button } from "../../../Button";
 import { Gallery } from "../../../Gallery";
 import asideStyles from "../Aside.module.scss";
-import { Button } from "../../../Button";
 
 export const GalleryAside = () => {
   const { t } = useTranslation();

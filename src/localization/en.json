@@ -5,7 +5,7 @@
   "navigation": {
     "canvas": "Canvas",
     "gallery": "Gallery",
-    "brush": "Brush",
+    "line": "Freehand",
     "eraser": "Eraser",
     "text": "Text",
     "download": "Download",
@@ -23,7 +23,7 @@
       "title": "Background color"
     }
   },
-  "brush": {
+  "line": {
     "sizeSelector": {
       "title": "Size",
       "options": {

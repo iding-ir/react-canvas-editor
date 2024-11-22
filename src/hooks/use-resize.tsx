@@ -3,11 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { Transformer } from "react-konva";
 
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { selectTool } from "../features/brush";
 import {
   selectCanvasSelectedItem,
   setCanvasSelectedItem,
 } from "../features/canvas";
+import { selectTool } from "../features/line";
 
 export const useResize = <T extends Konva.Image | Konva.Text | Konva.Line>({
   id,

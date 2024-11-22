@@ -2,10 +2,13 @@ import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
 
-export type Image = string;
+export type ImageType = {
+  id: string;
+  src: string;
+};
 
 export interface GalleryState {
-  images: Image[];
+  images: ImageType[];
 }
 
 const initialState: GalleryState = {
@@ -16,7 +19,7 @@ export const gallerySlice = createAppSlice({
   name: "gallery",
   initialState,
   reducers: (create) => ({
-    addImage: create.reducer((state, { payload }: PayloadAction<Image>) => {
+    addImage: create.reducer((state, { payload }: PayloadAction<ImageType>) => {
       state.images = [...state.images, payload];
     }),
   }),

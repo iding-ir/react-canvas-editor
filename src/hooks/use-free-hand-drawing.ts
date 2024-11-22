@@ -1,23 +1,24 @@
 import Konva from "konva";
 import { useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import {
   addLine,
   addPoint,
-  selectBrushColor,
-  selectBrushSize,
+  selectLineColor,
+  selectLineSize,
   selectTool,
-} from "../features/brush";
+} from "../features/line";
 
 export const useFreehandDrawing = () => {
   const dispatch = useAppDispatch();
   const tool = useAppSelector(selectTool);
-  const size = useAppSelector(selectBrushSize);
-  const color = useAppSelector(selectBrushColor);
+  const size = useAppSelector(selectLineSize);
+  const color = useAppSelector(selectLineColor);
   const isDrawing = useRef(false);
 
-  const handleMouseDown = (
+  const handleStart = (
     event: Konva.KonvaEventObject<MouseEvent | TouchEvent>,
   ) => {
     if (!tool) {
@@ -31,10 +32,18 @@ export const useFreehandDrawing = () => {
       return;
     }
 
-    dispatch(addLine({ size, color, tool, points: [position.x, position.y] }));
+    dispatch(
+      addLine({
+        id: uuidv4(),
+        size,
+        color,
+        tool,
+        points: [position.x, position.y],
+      }),
+    );
   };
 
-  const handleMouseMove = (
+  const handleMove = (
     event: Konva.KonvaEventObject<MouseEvent | TouchEvent>,
   ) => {
     if (!tool || !isDrawing.current) {
@@ -51,7 +60,7 @@ export const useFreehandDrawing = () => {
     dispatch(addPoint([point.x, point.y]));
   };
 
-  const handleMouseUp = () => {
+  const handleEnd = () => {
     if (!tool) {
       return;
     }
@@ -59,5 +68,5 @@ export const useFreehandDrawing = () => {
     isDrawing.current = false;
   };
 
-  return { handleMouseDown, handleMouseMove, handleMouseUp };
+  return { handleStart, handleMove, handleEnd };
 };

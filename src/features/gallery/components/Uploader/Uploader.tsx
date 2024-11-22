@@ -1,5 +1,7 @@
 import { ReactNode, useCallback } from "react";
 import Dropzone from "react-dropzone";
+import { v4 as uuidv4 } from "uuid";
+
 import { useAppDispatch } from "../../../../app/hooks";
 import { addImage } from "../../gallery-slice";
 
@@ -13,7 +15,12 @@ export const Uploader = ({ children }: { children: ReactNode }) => {
       reader.onabort = () => console.log("file reading was aborted");
       reader.onerror = () => console.log("file reading has failed");
       reader.onload = () => {
-        dispatch(addImage(reader.result as string));
+        dispatch(
+          addImage({
+            id: uuidv4(),
+            src: reader.result as string,
+          }),
+        );
       };
       reader.readAsDataURL(file);
     });

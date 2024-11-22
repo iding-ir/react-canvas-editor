@@ -1,15 +1,13 @@
-import Konva from "konva";
 import { Stage } from "react-konva";
 
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectLines, selectTool } from "../../features/brush";
+import { useAppSelector } from "../../app/hooks";
 import {
   selectCanvasBackgroundColor,
   selectCanvasHeight,
   selectCanvasWidth,
-  setCanvasSelectedItem,
 } from "../../features/canvas";
 import { selectImages } from "../../features/gallery";
+import { selectLines } from "../../features/line";
 import { selectTexts } from "../../features/text";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
 import styles from "./Canvas.module.scss";
@@ -19,35 +17,23 @@ import { Lines } from "./components/Lines";
 import { Texts } from "./components/Texts";
 
 export const Canvas = () => {
-  const dispatch = useAppDispatch();
   const images = useAppSelector(selectImages);
   const canvasWidth = useAppSelector(selectCanvasWidth);
   const canvasHeight = useAppSelector(selectCanvasHeight);
   const canvasBackgroundColor = useAppSelector(selectCanvasBackgroundColor);
   const texts = useAppSelector(selectTexts);
   const lines = useAppSelector(selectLines);
-  const { handleMouseDown, handleMouseMove, handleMouseUp } =
-    useFreehandDrawing();
-  const tool = useAppSelector(selectTool);
-  const isInteractive = !tool;
-
-  const checkDeselect = (
-    event: Konva.KonvaEventObject<MouseEvent | TouchEvent>,
-  ) => {
-    if (event.target === event.target.getStage()) {
-      dispatch(setCanvasSelectedItem(null));
-    }
-  };
+  const { handleStart, handleMove, handleEnd } = useFreehandDrawing();
 
   return (
     <Stage
       className={styles.container}
       width={canvasWidth}
       height={canvasHeight}
-      onTouchStart={isInteractive ? checkDeselect : handleMouseDown}
-      onMouseDown={isInteractive ? checkDeselect : handleMouseDown}
-      onMousemove={handleMouseMove}
-      onMouseup={handleMouseUp}
+      onTouchStart={handleStart}
+      onMouseDown={handleStart}
+      onMousemove={handleMove}
+      onMouseup={handleEnd}
     >
       <Background
         width={canvasWidth}

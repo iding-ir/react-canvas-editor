@@ -1,34 +1,35 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-import { DEFAULT_BRUSH_COLOR, DEFAULT_BRUSH_SIZE } from "./brush";
+import { DEFAULT_LINE_COLOR, DEFAULT_LINE_SIZE } from "./line";
 
-export type Line = {
+export type LineType = {
+  id: string;
   size: number;
   color: string;
   tool: string | null;
   points: number[];
 };
 
-export interface BrushState {
+export interface LineState {
   size: number;
   color: string;
   tool: string | null;
-  lines: Line[];
+  lines: LineType[];
 }
 
-const initialState: BrushState = {
-  size: DEFAULT_BRUSH_SIZE,
-  color: DEFAULT_BRUSH_COLOR,
+const initialState: LineState = {
+  size: DEFAULT_LINE_SIZE,
+  color: DEFAULT_LINE_COLOR,
   tool: null,
   lines: [],
 };
 
-export const brushSlice = createAppSlice({
-  name: "brush",
+export const lineSlice = createAppSlice({
+  name: "line",
   initialState,
   reducers: (create) => ({
-    addLine: create.reducer((state, { payload }: PayloadAction<Line>) => {
+    addLine: create.reducer((state, { payload }: PayloadAction<LineType>) => {
       state.lines = [...state.lines, payload];
     }),
     addPoint: create.reducer((state, { payload }: PayloadAction<number[]>) => {
@@ -37,12 +38,12 @@ export const brushSlice = createAppSlice({
         ...payload,
       ];
     }),
-    changeBrushSize: create.reducer(
+    changeLineSize: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
         state.size = payload;
       },
     ),
-    setBrushColor: create.reducer(
+    setLineColor: create.reducer(
       (state, { payload }: PayloadAction<string>) => {
         state.color = payload;
       },
@@ -55,14 +56,14 @@ export const brushSlice = createAppSlice({
   }),
   selectors: {
     selectLines: ({ lines }) => lines,
-    selectBrushSize: ({ size }) => size,
-    selectBrushColor: ({ color }) => color,
+    selectLineSize: ({ size }) => size,
+    selectLineColor: ({ color }) => color,
     selectTool: ({ tool }) => tool,
   },
 });
 
-export const { addLine, addPoint, changeBrushSize, setBrushColor, setTool } =
-  brushSlice.actions;
+export const { addLine, addPoint, changeLineSize, setLineColor, setTool } =
+  lineSlice.actions;
 
-export const { selectLines, selectBrushSize, selectBrushColor, selectTool } =
-  brushSlice.selectors;
+export const { selectLines, selectLineSize, selectLineColor, selectTool } =
+  lineSlice.selectors;

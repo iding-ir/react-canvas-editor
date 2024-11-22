@@ -1,5 +1,6 @@
 import { Layer } from "react-konva";
 
+import { ImageType } from "../../../../features/gallery";
 import { AsyncImage } from "../AsyncImage";
 
 export const Images = ({
@@ -7,7 +8,7 @@ export const Images = ({
   canvasWidth,
   canvasHeight,
 }: {
-  images: string[];
+  images: ImageType[];
   canvasWidth: number;
   canvasHeight: number;
 }) => {
@@ -15,7 +16,6 @@ export const Images = ({
     <Layer>
       {images.map((image, index) => (
         <AsyncImage
-          id={`image-${index}`}
           image={image}
           canvasWidth={canvasWidth}
           canvasHeight={canvasHeight}

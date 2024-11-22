@@ -1,16 +1,11 @@
 import { Text } from "react-konva";
 
-import { useAppSelector } from "../../../../app/hooks.ts";
-import { selectTool } from "../../../../features/brush/brush-slice.ts";
-import { Text as TextType } from "../../../../features/text/index.ts";
+import { useAppSelector } from "../../../../app/hooks";
+import { selectTool } from "../../../../features/line/line-slice";
+import { Text as TextType } from "../../../../features/text/index";
 
-export const InteractiveText = ({
-  id,
-  text,
-}: {
-  id?: string;
-  text: TextType;
-}) => {
+export const InteractiveText = ({ text }: { text: TextType }) => {
+  const { id, content, size, color } = text;
   const tool = useAppSelector(selectTool);
   const draggable = !tool;
 
@@ -18,9 +13,9 @@ export const InteractiveText = ({
     <>
       <Text
         id={id}
-        text={text.text}
-        textSize={text.size}
-        fill={text.color}
+        text={content}
+        textSize={size}
+        fill={color}
         draggable={draggable}
       />
     </>

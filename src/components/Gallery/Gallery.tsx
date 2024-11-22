@@ -7,8 +7,8 @@ export const Gallery = () => {
 
   return (
     <div className={styles.container}>
-      {images.map((image, index) => (
-        <img key={index} src={image} alt="gallery" />
+      {images.map(({ id, src }) => (
+        <img key={id} src={src} alt="gallery" />
       ))}
     </div>
   );
