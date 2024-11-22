@@ -67,6 +67,13 @@
         "en": "English",
         "nl": "Dutch"
       }
+    },
+    "theme": {
+      "label": "Theme",
+      "options": {
+        "light": "Light",
+        "dark": "Dark"
+      }
     }
   }
 }
