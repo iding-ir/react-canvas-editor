@@ -4,7 +4,6 @@ import {
   NavigationItem,
   selectCurrentNavigation,
 } from "../../features/navigation";
-import styles from "./Aside.module.scss";
 import { CanvasAside } from "./components/CanvasAside";
 import { ExportAside } from "./components/ExportAside/ExportAside";
 import { GalleryAside } from "./components/GalleryAside";
@@ -15,7 +14,7 @@ import { TextAside } from "./components/TextAside";
 export const Aside = () => {
   const currentNavigation = useAppSelector(selectCurrentNavigation);
 
-  return <div className={styles.container}>{getAside(currentNavigation)}</div>;
+  return getAside(currentNavigation);
 };
 
 const getAside = (currentNavigation: NavigationItem) => {

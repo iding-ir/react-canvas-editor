@@ -1,10 +1,12 @@
-import { Layout } from "../../layout";
-import { Navigation } from "../../features/navigation/components/Navigation";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
 import { useTranslation } from "react-i18next";
-import { Main } from "../../components/Main";
+
 import { Aside } from "../../components/Aside";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { Main } from "../../components/Main";
+import { Overview } from "../../components/Overview";
+import { Navigation } from "../../features/navigation/components/Navigation";
+import { Layout } from "../../layout";
 
 export const Editor = () => {
   const { t } = useTranslation();
@@ -26,6 +28,10 @@ export const Editor = () => {
       <Layout.Main>
         <Main />
       </Layout.Main>
+
+      <Layout.Overview>
+        <Overview />
+      </Layout.Overview>
 
       <Layout.Footer>
         <Footer />

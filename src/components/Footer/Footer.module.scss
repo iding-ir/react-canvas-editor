@@ -5,6 +5,13 @@
   font-size: var(--font-size-xs);
   padding: var(--spacing-md);
   text-align: center;
-  border-top: var(--border-thickness-md) solid var(--color-primary-sm);
+  border-top-width: var(--border-thickness-md);
+  border-style: solid;
+  border-image: linear-gradient(
+      to right,
+      var(--color-secondary-md),
+      var(--color-primary-md)
+    )
+    100% 1;
   background-color: var(--color-lighter);
 }

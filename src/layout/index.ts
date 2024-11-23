@@ -1,8 +1,9 @@
+import { Aside } from "./Aside";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Main } from "./Main";
 import { Navigation } from "./Navigation";
-import { Aside } from "./Aside";
+import { Overview } from "./Overview";
 import { Section } from "./Section";
 
 export const Layout = {
@@ -10,6 +11,7 @@ export const Layout = {
   Navigation,
   Aside,
   Main,
+  Overview,
   Header,
   Footer,
 };
