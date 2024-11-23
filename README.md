@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Index
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [About](#about)
+- [Features](#features)
+- [Demo](#demo)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
 
-Currently, two official plugins are available:
+## About
+`react-canvas-editor` is a single page application that allows user to create an HTML5 canvas, edit it, and export it as file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Supports importing image.
+- Supports Freehand drawing.
+- Supports entering text.
+- Allows modifying document properties.
+- Allows user to export as `.jpg`, `.png`, and `.pdf`.
+- Supports localization.
+- Supports build-time and runtime theming.
+- Uses LocalStorage for persisting state between visits.
+- Leverages `.env` files to support different configurations.
 
-## Expanding the ESLint configuration
+## Demo
+[Live](https://react-canvas-editor.iding.ir)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack
+- `TypeScript`.
+- `React`.
+- `Redux Toolkit` for state management, querying, caching, and handling effects.
+- `React i18next` for localization.
+- `Konva` for HTML5 canvas operations.
+- `Redux Persist` for persisting the state of app between user views.
+- `PDF Lib` for exporting as PDF.
+- `SCSS Modules` for component-scoped styles.
+- `React Helmet Async` for changing `head` in runtime.
+- `Vite` for building the project.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Clone:
+```
+git clone https://github.com/iding-ir/react-canvas-editor.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Install dependencies:
+```
+yarn install
+```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Run dev environment:
+```
+yarn dev
 ```
