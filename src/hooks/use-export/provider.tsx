@@ -6,6 +6,7 @@ import { downloadDataUrl } from "../../utils/download-data-url";
 
 export type ExportState = {
   stageRef: React.MutableRefObject<Konva.Stage | null>;
+  handleExportJpg: () => void;
   handleExportPng: () => void;
   handleExportPdf: () => void;
 };
@@ -25,6 +26,14 @@ export const ExportContextProvider = ({
     }
 
     downloadDataUrl(stageRef.current.toDataURL(), "export.png");
+  };
+
+  const handleExportJpg = () => {
+    if (!stageRef.current) {
+      return;
+    }
+
+    downloadDataUrl(stageRef.current.toDataURL(), "export.jpg");
   };
 
   const handleExportPdf = async () => {
@@ -56,7 +65,7 @@ export const ExportContextProvider = ({
 
   return (
     <ExportContext.Provider
-      value={{ stageRef, handleExportPng, handleExportPdf }}
+      value={{ stageRef, handleExportJpg, handleExportPng, handleExportPdf }}
     >
       {children}
     </ExportContext.Provider>

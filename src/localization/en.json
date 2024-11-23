@@ -57,6 +57,7 @@
     "title": "Choose export format",
     "download": "Download",
     "image": "Image",
+    "jpg": "JPG",
     "png": "PNG",
     "pdf": "PDF"
   },

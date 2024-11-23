@@ -8,14 +8,15 @@ import asideStyles from "../Aside.module.scss";
 
 export const ExportAside = () => {
   const { t } = useTranslation();
-  const { handleExportPng, handleExportPdf } = useExportContext();
+  const { handleExportJpg, handleExportPng, handleExportPdf } =
+    useExportContext();
 
   return (
     <div className={asideStyles.container}>
       <Title text={t("export.title")}>{<FileIcon />}</Title>
 
+      <Button label={t("export.jpg")} onClick={handleExportJpg} />
       <Button label={t("export.png")} onClick={handleExportPng} />
-
       <Button label={t("export.pdf")} onClick={handleExportPdf} />
     </div>
   );
