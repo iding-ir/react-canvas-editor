@@ -9,6 +9,7 @@
   padding: var(--spacing-sm);
   border-top: var(--border-thickness-md) solid var(--color-primary-md);
   background-color: var(--color-lighter);
+  overflow: auto;
 
   @media only screen and (min-width: $breakpoint-lg) {
     border: none;

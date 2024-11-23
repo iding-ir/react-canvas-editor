@@ -9,7 +9,6 @@
     [start start-icon start-select] auto
     [end-icon start-label] 1fr [end-select start-arrow] auto
     [end-arrow end-label end];
-  width: 100%;
   z-index: 10;
 
   &.horizontal {
@@ -18,12 +17,15 @@
       [end-icon end-label end-select end-arrow end];
     grid-template-columns:
       [start start-icon] auto
-      [end-icon start-label] 50%
-      [end-label start-select] 1fr [start-arrow] auto [end-select end-arrow end];
+      [end-icon start-label] auto
+      [end-label start-select] 1fr [start-arrow] var(--icon-size-md)
+      [end-select end-arrow end];
   }
 
   & > * {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
@@ -45,6 +47,7 @@
   label {
     grid-row: start-label/end-label;
     grid-column: start-label/end-label;
+    align-items: start;
     color: var(--color-dark);
     transition: var(--transition-sm);
     cursor: pointer;
@@ -58,6 +61,7 @@
     grid-row: start-select/end-select;
     grid-column: start-select/end;
     padding: var(--spacing-md);
+    padding-right: var(--icon-size-md);
     color: var(--color-dark);
     background-color: var(--color-lighter);
     border-radius: var(--border-radius);
@@ -84,7 +88,9 @@
   .arrow {
     grid-row: start-arrow/end-arrow;
     grid-column: start-arrow/end-arrow;
-    padding: 0 var(--spacing-sm);
+    width: var(--icon-size-md);
+    touch-action: none;
+    pointer-events: none;
 
     svg {
       width: var(--icon-size-xs);
