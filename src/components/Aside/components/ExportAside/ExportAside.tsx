@@ -2,8 +2,9 @@ import { useTranslation } from "react-i18next";
 
 import FileIcon from "../../../../assets/icons/file.svg";
 import { useExportContext } from "../../../../hooks/use-export";
-import { Button } from "../../../Button";
-import { Title } from "../../../Title";
+import { Form } from "../../../Form/Form";
+import { Button } from "../../../Form/components/Button";
+import { Field } from "../../../Form/components/Field";
 import asideStyles from "../Aside.module.scss";
 
 export const ExportAside = () => {
@@ -13,11 +14,13 @@ export const ExportAside = () => {
 
   return (
     <div className={asideStyles.container}>
-      <Title text={t("export.title")}>{<FileIcon />}</Title>
-
-      <Button label={t("export.jpg")} onClick={handleExportJpg} />
-      <Button label={t("export.png")} onClick={handleExportPng} />
-      <Button label={t("export.pdf")} onClick={handleExportPdf} />
+      <Form>
+        <Field legend={t("export.title")} icon={<FileIcon />}>
+          <Button label={t("export.jpg")} onClick={handleExportJpg} />
+          <Button label={t("export.png")} onClick={handleExportPng} />
+          <Button label={t("export.pdf")} onClick={handleExportPdf} />
+        </Field>
+      </Form>
     </div>
   );
 };

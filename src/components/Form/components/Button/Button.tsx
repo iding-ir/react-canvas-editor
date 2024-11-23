@@ -10,7 +10,12 @@ export const Button = ({
   onClick: () => void;
 }) => {
   return (
-    <button disabled={disabled} className={styles.container} onClick={onClick}>
+    <button
+      disabled={disabled}
+      className={styles.container}
+      onClick={onClick}
+      type="button"
+    >
       {label}
     </button>
   );

@@ -1,0 +1,12 @@
+.container {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-sm);
+
+  &:not(:last-of-type) {
+    padding-bottom: var(--spacing-md);
+    border-bottom: var(--border-thickness-sm) solid var(--color-lighter);
+  }
+}

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { useAppDispatch } from "../../../app/hooks";
 import Icon from "../../../assets/icons/language.svg";
-import { Select } from "../../../components/Select";
+import { Select } from "../../../components/Form/components/Select";
 import { LANGUAGES, Language } from "../language";
 import { selectLanguage, setLanguage } from "../language-slice";
 

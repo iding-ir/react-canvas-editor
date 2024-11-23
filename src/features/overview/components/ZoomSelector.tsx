@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { useAppDispatch } from "../../../app/hooks";
 import Icon from "../../../assets/icons/zoom.svg";
-import { Select } from "../../../components/Select";
+import { Select } from "../../../components/Form/components/Select";
 import { ZOOMS, Zoom } from "../overview";
 import { selectZoom, setZoom } from "../overview-slice";
 

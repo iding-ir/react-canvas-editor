@@ -1,16 +1,11 @@
 import { ReactNode } from "react";
+
 import styles from "./Title.module.scss";
 
-export const Title = ({
-  text,
-  children,
-}: {
-  text: string;
-  children: ReactNode;
-}) => {
+export const Title = ({ text, icon }: { text: string; icon: ReactNode }) => {
   return (
     <h3 className={styles.container}>
-      {children}
+      {icon}
       {text}
     </h3>
   );

@@ -1,13 +1,24 @@
+import { useTranslation } from "react-i18next";
+
+import BrushIcon from "../../../../assets/icons/brush.svg";
 import { LineColorPicker } from "../../../../features/line/components/LineColorPicker";
 import { LineSizeSelector } from "../../../../features/line/components/LineSizeSelector";
+import { Form } from "../../../Form/Form";
+import { Field } from "../../../Form/components/Field";
 import asideStyles from "../Aside.module.scss";
 
 export const LineAside = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={asideStyles.container}>
-      <LineSizeSelector />
+      <Form>
+        <Field legend={t("line.title")} icon={<BrushIcon />}>
+          <LineSizeSelector />
 
-      <LineColorPicker />
+          <LineColorPicker />
+        </Field>
+      </Form>
     </div>
   );
 };

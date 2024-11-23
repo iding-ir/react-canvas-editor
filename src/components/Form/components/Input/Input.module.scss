@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+
+    svg {
+      width: var(--icon-size-xs);
+      height: var(--icon-size-xs);
+
+      * {
+        stroke: var(--color-primary-md);
+      }
+    }
+  }
+
+  input {
+    all: unset;
+    flex-grow: 10;
+    font-size: var(--font-size-md);
+    height: var(--icon-size-sm);
+    color: var(--color-dark);
+    padding: var(--spacing-sm);
+    text-align: start;
+    background-color: var(--color-lighter);
+    border-radius: var(--border-radius);
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}

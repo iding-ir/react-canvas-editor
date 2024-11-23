@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
+
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { ColorPicker } from "../../../../components/Aside/components/ColorPicker";
+import { ColorPicker } from "../../../../components/ColorPicker";
 import { selectTextColor, setTextColor } from "../../text-slice";
 
 export const TextColorPicker = () => {
@@ -10,7 +11,7 @@ export const TextColorPicker = () => {
 
   return (
     <ColorPicker
-      title={t("text.color.title")}
+      label={t("text.font.color")}
       color={color}
       onChange={(color: string) => dispatch(setTextColor(color))}
     />

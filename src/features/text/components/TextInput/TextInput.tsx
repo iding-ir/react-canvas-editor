@@ -4,9 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import TextIcon from "../../../../assets/icons/text.svg";
-import { Button } from "../../../../components/Button";
-import { Input } from "../../../../components/Input";
-import { Title } from "../../../../components/Title";
+import { Button } from "../../../../components/Form/components/Button";
+import { Input } from "../../../../components/Form/components/Input";
 import { addText, selectTextColor, selectTextSize } from "../../text-slice";
 import styles from "./TextInput.module.scss";
 
@@ -38,12 +37,10 @@ export const TextInput = () => {
 
   return (
     <div className={styles.container}>
-      <Title text={t("text.input.title")}>{<TextIcon />}</Title>
-
       <Input
+        label={t("text.input.label")}
         value={text}
         icon={<TextIcon />}
-        placeholder={t("text.input.placeholder")}
         autoFocus={true}
         onChange={(event) => onChange(event.target.value)}
         onKeyDown={(event) => onKeyDown(event)}

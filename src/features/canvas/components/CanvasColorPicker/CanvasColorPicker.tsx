@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
+
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
-import { ColorPicker } from "../../../../components/Aside/components/ColorPicker";
+import { ColorPicker } from "../../../../components/ColorPicker";
 import {
   selectCanvasBackgroundColor,
   setCanvasBackgroundColor,
@@ -13,7 +14,7 @@ export const CanvasColorPicker = () => {
 
   return (
     <ColorPicker
-      title={t("canvas.backgroundColor.title")}
+      label={t("canvas.document.color")}
       color={color}
       onChange={(color: string) => dispatch(setCanvasBackgroundColor(color))}
     />

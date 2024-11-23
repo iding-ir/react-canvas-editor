@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import Image from "../../assets/icons/select.svg";
+import Image from "../../../../assets/icons/select.svg";
 import styles from "./Select.module.scss";
 
 export type Option = {

@@ -5,6 +5,7 @@ import styles from "./Input.module.scss";
 export const Input = ({
   icon,
   value,
+  label,
   type = "text",
   min,
   max,
@@ -16,6 +17,7 @@ export const Input = ({
 }: {
   icon: ReactNode;
   value: string | number;
+  label: string;
   type?: string;
   min?: number;
   max?: number;
@@ -26,11 +28,13 @@ export const Input = ({
   onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => void;
 }) => {
   return (
-    <div className={styles.container}>
-      {icon}
+    <label className={styles.container}>
+      <span className={styles.label}>
+        {icon}
+        {label}
+      </span>
 
       <input
-        className={styles.container}
         value={value}
         type={type}
         min={min}
@@ -41,6 +45,6 @@ export const Input = ({
         onChange={onChange}
         onKeyDown={onKeyDown}
       />
-    </div>
+    </label>
   );
 };

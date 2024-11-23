@@ -12,53 +12,45 @@
     "settings": "Settings"
   },
   "canvas": {
-    "name": {
-      "label": "File name",
-      "placeholder": "Enter name here"
+    "document": {
+      "title": "Document",
+      "name": {
+        "label": "File name",
+        "placeholder": "Enter name here"
+      },
+      "color": "Color"
     },
-    "sizeSelector": {
+    "size": {
       "title": "Size",
-      "options": {
-        "width": "Width",
-        "height": "Height"
-      }
-    },
-    "backgroundColor": {
-      "title": "Background color"
-    }
-  },
-  "line": {
-    "sizeSelector": {
-      "title": "Size",
-      "options": {
-        "thickness": "Thickness"
-      }
-    },
-    "color": {
-      "title": "Color"
-    }
-  },
-  "text": {
-    "input": {
-      "title": "Text",
-      "placeholder": "Enter text here",
-      "button": "Add text"
-    },
-    "sizeSelector": {
-      "title": "Size",
-      "options": {
-        "fontSize": "fontSize"
-      }
-    },
-    "color": {
-      "title": "Color"
+      "width": "Width",
+      "height": "Height"
     }
   },
   "gallery": {
-    "upload": "Upload"
+    "title": "Upload",
+    "choose": "Choose",
+    "notFound": "No images found"
+  },
+  "line": {
+    "title": "Pen",
+    "size": "Size",
+    "color": "Color"
+  },
+  "text": {
+    "title": "Content",
+    "input": {
+      "label": "Text",
+      "placeholder": "Enter text here",
+      "button": "Add text"
+    },
+    "font": {
+      "title": "Font",
+      "size": "Size",
+      "color": "Color"
+    }
   },
   "export": {
-    "title": "Choose export format",
+    "title": "Format",
     "download": "Download",
     "image": "Image",
     "jpg": "JPG",
@@ -66,6 +58,7 @@
     "pdf": "PDF"
   },
   "settings": {
+    "title": "Settings",
     "language": {
       "label": "Language",
       "options": {
