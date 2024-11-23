@@ -6,20 +6,56 @@
     "canvas": "Canvas",
     "gallery": "Galerij",
     "line": "Vrijhand",
-    "eraser": "Gom",
+    "eraser": "Gum",
     "text": "Tekst",
     "export": "Exporteren",
     "settings": "Instellingen"
   },
   "canvas": {
-    "sizeSelector": "Maat"
+    "sizeSelector": {
+      "title": "Grootte",
+      "options": {
+        "width": "Breedte",
+        "height": "Hoogte"
+      }
+    },
+    "backgroundColor": {
+      "title": "Achtergrondkleur"
+    }
+  },
+  "line": {
+    "sizeSelector": {
+      "title": "Grootte",
+      "options": {
+        "thickness": "Dikte"
+      }
+    },
+    "color": {
+      "title": "Kleur"
+    }
+  },
+  "text": {
+    "input": {
+      "title": "Tekst",
+      "placeholder": "Voer hier tekst in",
+      "button": "Tekst toevoegen"
+    },
+    "sizeSelector": {
+      "title": "Grootte",
+      "options": {
+        "fontSize": "fontSize"
+      }
+    },
+    "color": {
+      "title": "Kleur"
+    }
   },
   "gallery": {
     "upload": "Uploaden"
   },
   "export": {
     "title": "Kies exportformaat",
-    "download": "Download",
+    "download": "Downloaden",
     "image": "Afbeelding",
     "png": "PNG",
     "pdf": "PDF"
@@ -30,6 +66,21 @@
       "options": {
         "en": "Engels",
         "nl": "Nederlands"
+      }
+    },
+    "theme": {
+      "label": "Thema",
+      "options": {
+        "light": "Licht",
+        "dark": "Donker"
+      }
+    },
+    "size": {
+      "label": "Grootte",
+      "options": {
+        "sm": "Klein",
+        "md": "Medium",
+        "lg": "Groot"
       }
     }
   }
