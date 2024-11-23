@@ -4,10 +4,12 @@ import { createAppSlice } from "../createAppSlice";
 import {
   DEFAULT_CANVAS_BACKGROUND_COLOR,
   DEFAULT_CANVAS_HEIGHT,
+  DEFAULT_CANVAS_NAME,
   DEFAULT_CANVAS_WIDTH,
 } from "./canvas";
 
 export interface CanvasState {
+  name: string;
   width: number;
   height: number;
   backgroundColor: string;
@@ -15,6 +17,7 @@ export interface CanvasState {
 }
 
 const initialState: CanvasState = {
+  name: DEFAULT_CANVAS_NAME,
   width: DEFAULT_CANVAS_WIDTH,
   height: DEFAULT_CANVAS_HEIGHT,
   backgroundColor: DEFAULT_CANVAS_BACKGROUND_COLOR,
@@ -25,6 +28,11 @@ export const canvasSlice = createAppSlice({
   name: "canvas",
   initialState,
   reducers: (create) => ({
+    setCanvasName: create.reducer(
+      (state, { payload }: PayloadAction<string>) => {
+        state.name = payload;
+      },
+    ),
     changeCanvasWidth: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
         state.width = payload;
@@ -47,6 +55,7 @@ export const canvasSlice = createAppSlice({
     ),
   }),
   selectors: {
+    selectCanvasName: ({ name }) => name,
     selectCanvasWidth: ({ width }) => width,
     selectCanvasHeight: ({ height }) => height,
     selectCanvasBackgroundColor: ({ backgroundColor }) => backgroundColor,
@@ -55,6 +64,7 @@ export const canvasSlice = createAppSlice({
 });
 
 export const {
+  setCanvasName,
   changeCanvasWidth,
   changeCanvasHeight,
   setCanvasBackgroundColor,
@@ -62,6 +72,7 @@ export const {
 } = canvasSlice.actions;
 
 export const {
+  selectCanvasName,
   selectCanvasWidth,
   selectCanvasHeight,
   selectCanvasBackgroundColor,

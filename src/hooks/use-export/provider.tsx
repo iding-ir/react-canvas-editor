@@ -2,6 +2,8 @@ import Konva from "konva";
 import { PDFDocument } from "pdf-lib";
 import { ReactNode, createContext, useRef } from "react";
 
+import { useAppSelector } from "../../app/hooks";
+import { selectCanvasName } from "../../features/canvas";
 import { downloadDataUrl } from "../../utils/download-data-url";
 
 export type ExportState = {
@@ -19,13 +21,14 @@ export const ExportContextProvider = ({
   children: ReactNode;
 }) => {
   const stageRef = useRef<Konva.Stage>(null);
+  const name = useAppSelector(selectCanvasName);
 
   const handleExportPng = () => {
     if (!stageRef.current) {
       return;
     }
 
-    downloadDataUrl(stageRef.current.toDataURL(), "export.png");
+    downloadDataUrl(stageRef.current.toDataURL(), `${name}.png`);
   };
 
   const handleExportJpg = () => {
@@ -33,7 +36,7 @@ export const ExportContextProvider = ({
       return;
     }
 
-    downloadDataUrl(stageRef.current.toDataURL(), "export.jpg");
+    downloadDataUrl(stageRef.current.toDataURL(), `${name}.jpg`);
   };
 
   const handleExportPdf = async () => {
@@ -59,7 +62,7 @@ export const ExportContextProvider = ({
 
     downloadDataUrl(
       URL.createObjectURL(new Blob([pdfBytes], { type: "application/pdf" })),
-      "export.pdf",
+      `${name}.pdf`,
     );
   };
 

@@ -6,6 +6,7 @@ export const MAX_CANVAS_HEIGHT = 2000;
 export const DEFAULT_CANVAS_WIDTH = 480;
 export const DEFAULT_CANVAS_HEIGHT = 320;
 export const DEFAULT_CANVAS_BACKGROUND_COLOR = "#ffffff";
+export const DEFAULT_CANVAS_NAME = "Untitled";
 
 export enum TOOLS {
   pen = "pen",

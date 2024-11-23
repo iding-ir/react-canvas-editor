@@ -12,6 +12,10 @@
     "settings": "Settings"
   },
   "canvas": {
+    "name": {
+      "label": "File name",
+      "placeholder": "Enter name here"
+    },
     "sizeSelector": {
       "title": "Size",
       "options": {
