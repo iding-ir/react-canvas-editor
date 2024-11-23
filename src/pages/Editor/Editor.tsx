@@ -6,9 +6,11 @@ import { Header } from "../../components/Header";
 import { Main } from "../../components/Main";
 import { Overview } from "../../components/Overview";
 import { Navigation } from "../../features/navigation/components/Navigation";
+import { usePersist } from "../../hooks/use-persist";
 import { Layout } from "../../layout";
 
 export const Editor = () => {
+  usePersist();
   const { t } = useTranslation();
 
   return (

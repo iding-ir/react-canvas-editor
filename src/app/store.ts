@@ -4,6 +4,17 @@ import {
   combineSlices,
   configureStore,
 } from "@reduxjs/toolkit";
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+  persistReducer,
+  persistStore,
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 import { canvasSlice } from "../features/canvas";
 import { gallerySlice } from "../features/gallery";
@@ -20,6 +31,13 @@ import { textSlice } from "../features/text";
 import { themeSlice } from "../features/theme";
 import { themeListenerMiddleware } from "../features/theme/theme-middleware";
 
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage,
+  blacklist: [navigationSlice.name],
+};
+
 const rootReducer = combineSlices(
   navigationSlice,
   languageSlice,
@@ -32,16 +50,24 @@ const rootReducer = combineSlices(
   overviewSlice,
 );
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    })
       .prepend(languageListenerMiddleware.middleware)
       .prepend(themeListenerMiddleware.middleware)
       .prepend(sizeListenerMiddleware.middleware)
       .prepend(overviewListenerMiddleware.middleware)
       .prepend(navigationListenerMiddleware.middleware),
 });
+
+export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = typeof store;
