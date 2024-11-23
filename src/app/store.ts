@@ -12,6 +12,8 @@ import { languageListenerMiddleware } from "../features/language/language-middle
 import { lineSlice } from "../features/line";
 import { navigationSlice } from "../features/navigation";
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
+import { sizeSlice } from "../features/size";
+import { sizeListenerMiddleware } from "../features/size/size-middleware";
 import { textSlice } from "../features/text";
 import { themeSlice } from "../features/theme";
 import { themeListenerMiddleware } from "../features/theme/theme-middleware";
@@ -20,6 +22,7 @@ const rootReducer = combineSlices(
   navigationSlice,
   languageSlice,
   themeSlice,
+  sizeSlice,
   gallerySlice,
   canvasSlice,
   lineSlice,
@@ -32,6 +35,7 @@ export const store = configureStore({
     getDefaultMiddleware()
       .prepend(languageListenerMiddleware.middleware)
       .prepend(themeListenerMiddleware.middleware)
+      .prepend(sizeListenerMiddleware.middleware)
       .prepend(navigationListenerMiddleware.middleware),
 });
 

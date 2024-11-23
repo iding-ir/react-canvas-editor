@@ -74,6 +74,14 @@
         "light": "Light",
         "dark": "Dark"
       }
+    },
+    "size": {
+      "label": "Size",
+      "options": {
+        "sm": "Small",
+        "md": "Medium",
+        "lg": "Large"
+      }
     }
   }
 }
