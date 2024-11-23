@@ -44,6 +44,7 @@ export const TextInput = () => {
         value={text}
         icon={<TextIcon />}
         placeholder={t("text.input.placeholder")}
+        autoFocus={true}
         onChange={(event) => onChange(event.target.value)}
         onKeyDown={(event) => onKeyDown(event)}
       />
