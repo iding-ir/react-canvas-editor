@@ -29,6 +29,7 @@ export const Canvas = () => {
 
   return (
     <Stage
+      id="stage"
       ref={stageRef}
       className={styles.container}
       width={canvasWidth}

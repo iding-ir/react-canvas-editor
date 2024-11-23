@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import Image from "../../assets/icons/select.svg";
 import styles from "./Select.module.scss";
 
@@ -12,6 +14,7 @@ export const Select = ({
   value,
   icon,
   label,
+  direction = "vertical",
   onChange,
 }: {
   id: string;
@@ -19,10 +22,16 @@ export const Select = ({
   value: string;
   icon: React.ReactNode;
   label?: string;
+  direction?: "horizontal" | "vertical";
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }) => {
+  const classNames = clsx(styles.container, {
+    [styles.horizontal]: direction === "horizontal",
+    [styles.vertical]: direction === "vertical",
+  });
+
   return (
-    <div className={styles.container}>
+    <div className={classNames}>
       <i className={styles.icon}>{icon}</i>
 
       <label htmlFor={id}>{label}</label>

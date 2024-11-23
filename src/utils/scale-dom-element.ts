@@ -1,3 +1,9 @@
-export const scaleDomElement = (element: HTMLElement, scale: number) => {
+export const scaleDomElement = ({
+  element,
+  scale,
+}: {
+  element: HTMLElement;
+  scale: number;
+}) => {
   element.style.scale = `${scale}`;
 };
