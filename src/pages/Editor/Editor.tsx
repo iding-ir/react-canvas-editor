@@ -13,6 +13,8 @@ export const Editor = () => {
 
   return (
     <Layout.Section>
+      <Layout.Head />
+
       <Layout.Navigation>
         <Navigation />
       </Layout.Navigation>
