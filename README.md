@@ -5,6 +5,7 @@
 - [Demo](#demo)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
+- [Preview](#preview)
 
 ## About
 `react-canvas-editor` is a single page application that allows user to create an HTML5 canvas, edit it, and export it as file.
@@ -14,6 +15,7 @@
 - Supports Freehand drawing.
 - Supports entering text.
 - Allows modifying document properties.
+- Allows user to manage layers.
 - Allows user to export as `.jpg`, `.png`, and `.pdf`.
 - Supports localization.
 - Supports build-time and runtime theming.
@@ -29,6 +31,8 @@
 - `Redux Toolkit` for state management, querying, caching, and handling effects.
 - `React i18next` for localization.
 - `Konva` for HTML5 canvas operations.
+- `dnd-kit` for drag and drop.
+- `react-colorful` for color picker.
 - `Redux Persist` for persisting the state of app between user views.
 - `PDF Lib` for exporting as PDF.
 - `SCSS Modules` for component-scoped styles.
@@ -51,3 +55,9 @@ Run dev environment:
 ```
 yarn dev
 ```
+
+## Preview
+
+![Desktop: text](https://github.com/iding-ir/react-canvas-editor/blob/master/raw/previews/desktop-text.png)
+![Desktop: layers](https://github.com/iding-ir/react-canvas-editor/blob/master/raw/previews/desktop-layers.png)
+![Desktop: settings](https://github.com/iding-ir/react-canvas-editor/blob/master/raw/previews/desktop-settings.png)
