@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../../../app/hooks";
-import { selectImages } from "../../../../features/gallery";
+import { selectImages } from "../../../../features/images";
 import { LayerType } from "../../../../features/layers";
 import { selectLines } from "../../../../features/line";
 import { selectTexts } from "../../../../features/text";

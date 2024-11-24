@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../../../app/hooks";
 import { selectCanvasHeight, selectCanvasWidth } from "../../../canvas";
-import { ImageType } from "../../../gallery/gallery";
+import { ImageType } from "../../../gallery/photos";
 import { LineType } from "../../../line/line";
 import { TextType } from "../../../text/text";
 import { LayerType } from "../../layers";

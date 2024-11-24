@@ -2,7 +2,7 @@ import Konva from "konva";
 import { Image } from "react-konva";
 
 import { useAppSelector } from "../../../../app/hooks";
-import { ImageType } from "../../../../features/gallery/gallery";
+import { ImageType } from "../../../../features/gallery/photos";
 import { selectTool } from "../../../../features/line/line-slice";
 import { useResize } from "../../../../hooks/use-resize";
 

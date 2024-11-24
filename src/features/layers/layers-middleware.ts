@@ -1,6 +1,6 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit";
 
-import { deleteImage } from "../gallery";
+import { deleteImage } from "../images";
 import { deleteLine } from "../line";
 import { deleteText } from "../text";
 import { deleteLayer } from "./layers-slice";

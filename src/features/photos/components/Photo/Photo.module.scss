@@ -1,0 +1,9 @@
+.container {
+  border-radius: var(--border-radius);
+  transition: var(--transition-md);
+  cursor: pointer;
+
+  &:hover {
+    filter: contrast(120%);
+  }
+}

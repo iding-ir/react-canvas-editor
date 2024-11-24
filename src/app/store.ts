@@ -17,8 +17,8 @@ import {
 import storage from "redux-persist/lib/storage";
 
 import { canvasSlice } from "../features/canvas";
-import { gallerySlice } from "../features/gallery";
-import { galleryListenerMiddleware } from "../features/gallery/gallery-middleware";
+import { imageSlice } from "../features/images";
+import { imageListenerMiddleware } from "../features/images/image-middleware";
 import { languageSlice } from "../features/language";
 import { languageListenerMiddleware } from "../features/language/language-middleware";
 import { layersSlice } from "../features/layers";
@@ -29,6 +29,7 @@ import { navigationSlice } from "../features/navigation";
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { overviewSlice } from "../features/overview";
 import { overviewListenerMiddleware } from "../features/overview/overview-middleware";
+import { photoSlice } from "../features/photos";
 import { sizeSlice } from "../features/size";
 import { sizeListenerMiddleware } from "../features/size/size-middleware";
 import { textSlice } from "../features/text";
@@ -42,8 +43,9 @@ const persistConfig = {
   storage,
   blacklist: [
     navigationSlice.name,
-    gallerySlice.name,
     canvasSlice.name,
+    photoSlice.name,
+    imageSlice.name,
     lineSlice.name,
     textSlice.name,
     overviewSlice.name,
@@ -53,11 +55,12 @@ const persistConfig = {
 
 const rootReducer = combineSlices(
   navigationSlice,
+  canvasSlice,
   languageSlice,
   themeSlice,
   sizeSlice,
-  gallerySlice,
-  canvasSlice,
+  photoSlice,
+  imageSlice,
   lineSlice,
   textSlice,
   overviewSlice,
@@ -74,7 +77,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     })
-      .prepend(galleryListenerMiddleware.middleware)
+      .prepend(imageListenerMiddleware.middleware)
       .prepend(lineListenerMiddleware.middleware)
       .prepend(textListenerMiddleware.middleware)
       .prepend(languageListenerMiddleware.middleware)

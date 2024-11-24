@@ -1,11 +1,11 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit";
 
 import { addLayer } from "../layers";
-import { addImage } from "./gallery-slice";
+import { addImage } from "./image-slice";
 
-export const galleryListenerMiddleware = createListenerMiddleware();
+export const imageListenerMiddleware = createListenerMiddleware();
 
-galleryListenerMiddleware.startListening({
+imageListenerMiddleware.startListening({
   actionCreator: addImage,
   effect: async ({ payload }, listenerApi) => {
     listenerApi.dispatch(

@@ -3,7 +3,7 @@ import Dropzone from "react-dropzone";
 import { v4 as uuidv4 } from "uuid";
 
 import { useAppDispatch } from "../../../../app/hooks";
-import { addImage } from "../../gallery-slice";
+import { addPhoto } from "../../photos-slice";
 
 export const Uploader = ({ children }: { children: ReactNode }) => {
   const dispatch = useAppDispatch();
@@ -16,7 +16,7 @@ export const Uploader = ({ children }: { children: ReactNode }) => {
       reader.onerror = () => console.log("file reading has failed");
       reader.onload = () => {
         dispatch(
-          addImage({
+          addPhoto({
             id: uuidv4(),
             src: reader.result as string,
           }),

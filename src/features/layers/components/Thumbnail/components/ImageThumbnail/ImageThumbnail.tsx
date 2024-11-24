@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Image, Layer, Stage } from "react-konva";
 
-import { ImageType } from "../../../../../gallery/gallery";
+import { ImageType } from "../../../../../gallery/photos";
 import styles from "../../Thumbnail.module.scss";
 
 export const ImageThumbnail = ({

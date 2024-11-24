@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 
 import UploadIcon from "../../../../assets/icons/upload.svg";
-import { Uploader } from "../../../../features/gallery/components/Uploader";
+import { Gallery } from "../../../../features/photos/components/Gallery";
+import { Uploader } from "../../../../features/photos/components/Uploader";
 import { Form } from "../../../Form/Form";
 import { Button } from "../../../Form/components/Button";
 import { Field } from "../../../Form/components/Field";
-import { Gallery } from "../../../Gallery";
 import asideStyles from "../Aside.module.scss";
 
 export const GalleryAside = () => {

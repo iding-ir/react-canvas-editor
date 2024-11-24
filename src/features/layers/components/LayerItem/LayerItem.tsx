@@ -5,7 +5,7 @@ import { CSSProperties } from "react";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import DeleteIcon from "../../../../assets/icons/delete.svg";
 import GripIcon from "../../../../assets/icons/grip.svg";
-import { selectImages } from "../../../gallery";
+import { selectImages } from "../../../images";
 import { selectLines } from "../../../line";
 import { selectTexts } from "../../../text";
 import { LayerType } from "../../layers";
