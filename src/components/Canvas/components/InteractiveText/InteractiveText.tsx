@@ -2,7 +2,7 @@ import { Text } from "react-konva";
 
 import { useAppSelector } from "../../../../app/hooks";
 import { selectTool } from "../../../../features/line/line-slice";
-import { Text as TextType } from "../../../../features/text/index";
+import { TextType } from "../../../../features/text/text";
 
 export const InteractiveText = ({ text }: { text: TextType }) => {
   const { id, content, size, color } = text;

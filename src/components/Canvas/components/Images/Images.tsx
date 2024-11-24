@@ -1,6 +1,6 @@
 import { Layer } from "react-konva";
 
-import { ImageType } from "../../../../features/gallery";
+import { ImageType } from "../../../../features/gallery/gallery";
 import { AsyncImage } from "../AsyncImage";
 
 export const Images = ({

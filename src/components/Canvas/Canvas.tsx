@@ -19,11 +19,11 @@ import { Texts } from "./components/Texts";
 
 export const Canvas = () => {
   const images = useAppSelector(selectImages);
+  const texts = useAppSelector(selectTexts);
+  const lines = useAppSelector(selectLines);
   const canvasWidth = useAppSelector(selectCanvasWidth);
   const canvasHeight = useAppSelector(selectCanvasHeight);
   const canvasBackgroundColor = useAppSelector(selectCanvasBackgroundColor);
-  const texts = useAppSelector(selectTexts);
-  const lines = useAppSelector(selectLines);
   const { handleStart, handleMove, handleEnd } = useFreehandDrawing();
   const { stageRef } = useExportContext();
 

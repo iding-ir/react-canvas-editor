@@ -1,0 +1,45 @@
+import { PayloadAction } from "@reduxjs/toolkit";
+
+import { createAppSlice } from "../createAppSlice";
+import { LayerType } from "./layers";
+
+export interface LayersState {
+  layers: LayerType[];
+}
+
+const initialState: LayersState = {
+  layers: [],
+};
+
+export const layersSlice = createAppSlice({
+  name: "layers",
+  initialState,
+  reducers: (create) => ({
+    addLayer: create.reducer((state, { payload }: PayloadAction<LayerType>) => {
+      state.layers = [...state.layers, payload];
+    }),
+    removeLayers: create.reducer(
+      (state, { payload }: PayloadAction<LayerType>) => {
+        state.layers = state.layers.filter((layer) => layer.id !== payload.id);
+      },
+    ),
+    updateLayer: create.reducer(
+      (state, { payload }: PayloadAction<LayerType>) => {
+        state.layers = state.layers.map((layer) => {
+          return layer.id === payload.id ? payload : layer;
+        });
+      },
+    ),
+  }),
+  selectors: {
+    selectLayers: ({ layers }) => layers,
+    selectLayer:
+      ({ layers }) =>
+      (id: string) =>
+        layers.find((layer) => layer.id === id),
+  },
+});
+
+export const { addLayer, removeLayers, updateLayer } = layersSlice.actions;
+
+export const { selectLayers, selectLayer } = layersSlice.selectors;

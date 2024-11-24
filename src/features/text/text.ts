@@ -1,3 +1,10 @@
+export type TextType = {
+  id: string;
+  content: string;
+  size: number;
+  color: string;
+};
+
 export const MIN_TEXT_SIZE = 4;
 export const MAX_TEXT_SIZE = 64;
 

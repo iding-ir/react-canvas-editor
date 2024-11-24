@@ -5,8 +5,9 @@ import {
   selectCurrentNavigation,
 } from "../../features/navigation";
 import { CanvasAside } from "./components/CanvasAside";
-import { ExportAside } from "./components/ExportAside/ExportAside";
+import { ExportAside } from "./components/ExportAside";
 import { GalleryAside } from "./components/GalleryAside";
+import { LayerAside } from "./components/LayersAside";
 import { LineAside } from "./components/LineAside";
 import { SettingsAside } from "./components/SettingsAside";
 import { TextAside } from "./components/TextAside";
@@ -27,6 +28,8 @@ const getAside = (currentNavigation: NavigationItem) => {
       return <LineAside />;
     case NAVIGATION_ITEMS.text:
       return <TextAside />;
+    case NAVIGATION_ITEMS.layers:
+      return <LayerAside />;
     case NAVIGATION_ITEMS.export:
       return <ExportAside />;
     case NAVIGATION_ITEMS.settings:

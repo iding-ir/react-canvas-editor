@@ -1,6 +1,7 @@
 import CanvasIcon from "../../assets/icons/canvas.svg";
 import ExportIcon from "../../assets/icons/export.svg";
 import GalleryIcon from "../../assets/icons/gallery.svg";
+import LayersIcon from "../../assets/icons/layers.svg";
 import LineIcon from "../../assets/icons/line.svg";
 import SettingsIcon from "../../assets/icons/settings.svg";
 import TextIcon from "../../assets/icons/text.svg";
@@ -10,6 +11,7 @@ export enum NAVIGATION_ITEMS {
   gallery = "gallery",
   line = "line",
   text = "text",
+  layers = "layers",
   export = "export",
   settings = "settings",
 }
@@ -38,6 +40,11 @@ export const navigationItems = [
     id: NAVIGATION_ITEMS.text,
     icon: <TextIcon />,
     text: "navigation.text",
+  },
+  {
+    id: NAVIGATION_ITEMS.layers,
+    icon: <LayersIcon />,
+    text: "navigation.layers",
   },
   {
     id: NAVIGATION_ITEMS.export,

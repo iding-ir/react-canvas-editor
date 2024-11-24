@@ -1,6 +1,6 @@
 import { Layer } from "react-konva";
 
-import { Text as TextType } from "../../../../features/text";
+import { TextType } from "../../../../features/text/text";
 import { InteractiveText } from "../InteractiveText";
 
 export const Texts = ({ texts }: { texts: TextType[] }) => {

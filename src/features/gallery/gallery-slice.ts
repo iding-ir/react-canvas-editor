@@ -1,11 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-
-export type ImageType = {
-  id: string;
-  src: string;
-};
+import { ImageType } from "./gallery";
 
 export interface GalleryState {
   images: ImageType[];

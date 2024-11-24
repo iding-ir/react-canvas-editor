@@ -1,0 +1,14 @@
+.container {
+  background-color: var(--color-dark);
+
+  & :global(.konvajs-content) {
+    width: unset !important;
+    height: unset !important;
+
+    canvas {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+}
