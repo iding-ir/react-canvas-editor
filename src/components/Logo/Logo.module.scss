@@ -1,0 +1,22 @@
+.container {
+  padding: var(--spacing-sm);
+  height: 100%;
+  width: auto;
+
+  svg {
+    height: 100%;
+    width: auto;
+
+    :global(.logo-bg) {
+      fill: var(--color-light);
+    }
+
+    :global(.logo-sun) {
+      fill: var(--color-secondary-md);
+    }
+
+    :global(.logo-hill) {
+      fill: var(--color-primary-md);
+    }
+  }
+}
