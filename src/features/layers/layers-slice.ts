@@ -15,6 +15,11 @@ export const layersSlice = createAppSlice({
   name: "layers",
   initialState,
   reducers: (create) => ({
+    setLayers: create.reducer(
+      (state, { payload }: PayloadAction<LayerType[]>) => {
+        state.layers = payload;
+      },
+    ),
     addLayer: create.reducer((state, { payload }: PayloadAction<LayerType>) => {
       state.layers = [...state.layers, payload];
     }),
@@ -40,6 +45,7 @@ export const layersSlice = createAppSlice({
   },
 });
 
-export const { addLayer, removeLayers, updateLayer } = layersSlice.actions;
+export const { setLayers, addLayer, removeLayers, updateLayer } =
+  layersSlice.actions;
 
 export const { selectLayers, selectLayer } = layersSlice.selectors;
