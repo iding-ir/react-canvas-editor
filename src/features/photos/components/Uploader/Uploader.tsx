@@ -3,6 +3,7 @@ import Dropzone from "react-dropzone";
 import { v4 as uuidv4 } from "uuid";
 
 import { useAppDispatch } from "../../../../app/hooks";
+import { ALLOWED_PHOTO_TYPES } from "../../photos";
 import { addPhoto } from "../../photos-slice";
 
 export const Uploader = ({ children }: { children: ReactNode }) => {
@@ -27,7 +28,7 @@ export const Uploader = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <Dropzone onDrop={onDrop}>
+    <Dropzone onDrop={onDrop} accept={ALLOWED_PHOTO_TYPES}>
       {({ getRootProps, getInputProps }) => (
         <div {...getRootProps()}>
           <input {...getInputProps()} />
