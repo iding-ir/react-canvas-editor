@@ -40,7 +40,15 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
-  blacklist: [navigationSlice.name],
+  blacklist: [
+    navigationSlice.name,
+    gallerySlice.name,
+    canvasSlice.name,
+    lineSlice.name,
+    textSlice.name,
+    overviewSlice.name,
+    layersSlice.name,
+  ],
 };
 
 const rootReducer = combineSlices(
