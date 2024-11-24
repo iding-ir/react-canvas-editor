@@ -1,15 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-import { DEFAULT_LINE_COLOR, DEFAULT_LINE_SIZE } from "./line";
-
-export type LineType = {
-  id: string;
-  size: number;
-  color: string;
-  tool: string | null;
-  points: number[];
-};
+import { DEFAULT_LINE_COLOR, DEFAULT_LINE_SIZE, LineType } from "./line";
 
 export interface LineState {
   size: number;

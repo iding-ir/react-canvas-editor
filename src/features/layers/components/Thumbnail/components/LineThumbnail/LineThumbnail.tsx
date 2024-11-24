@@ -1,6 +1,6 @@
 import { Layer, Line, Stage } from "react-konva";
 
-import { LineType } from "../../../../../line";
+import { LineType } from "../../../../../line/line";
 import styles from "../../Thumbnail.module.scss";
 
 export const LineThumbnail = ({
