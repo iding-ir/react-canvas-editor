@@ -1,4 +1,5 @@
 .container {
   grid-row: start-navigation/end-navigation;
   grid-column: start-navigation/end-navigation;
+  overflow: auto;
 }

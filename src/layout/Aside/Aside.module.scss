@@ -1,4 +1,5 @@
 .container {
   grid-row: start-aside/end-aside;
   grid-column: start-aside/end-aside;
+  overflow: auto;
 }
