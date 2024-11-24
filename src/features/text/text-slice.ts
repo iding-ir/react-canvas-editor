@@ -22,6 +22,9 @@ export const textSlice = createAppSlice({
     addText: create.reducer((state, { payload }: PayloadAction<TextType>) => {
       state.texts = [...state.texts, payload];
     }),
+    deleteText: create.reducer((state, { payload }: PayloadAction<string>) => {
+      state.texts = state.texts.filter((text) => text.id !== payload);
+    }),
     changeTextSize: create.reducer(
       (state, { payload }: PayloadAction<number>) => {
         state.size = payload;
@@ -40,7 +43,8 @@ export const textSlice = createAppSlice({
   },
 });
 
-export const { addText, changeTextSize, setTextColor } = textSlice.actions;
+export const { addText, deleteText, changeTextSize, setTextColor } =
+  textSlice.actions;
 
 export const { selectTexts, selectTextSize, selectTextColor } =
   textSlice.selectors;

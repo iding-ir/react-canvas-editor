@@ -18,6 +18,9 @@ export const gallerySlice = createAppSlice({
     addImage: create.reducer((state, { payload }: PayloadAction<ImageType>) => {
       state.images = [...state.images, payload];
     }),
+    deleteImage: create.reducer((state, { payload }: PayloadAction<string>) => {
+      state.images = state.images.filter((image) => image.id !== payload);
+    }),
   }),
   selectors: {
     selectImages: ({ images }) => images,
@@ -25,6 +28,6 @@ export const gallerySlice = createAppSlice({
   },
 });
 
-export const { addImage } = gallerySlice.actions;
+export const { addImage, deleteImage } = gallerySlice.actions;
 
 export const { selectImages, hasImages } = gallerySlice.selectors;

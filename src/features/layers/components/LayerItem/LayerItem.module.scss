@@ -7,13 +7,14 @@
   background-color: var(--color-lighter);
   overflow: hidden;
 
+  .delete,
   .grip {
     display: flex;
     flex-direction: column;
-    cursor: grab;
+    padding: var(--spacing-sm);
 
     svg {
-      width: var(--icon-size-sm);
+      width: var(--icon-size-xs);
       height: auto;
 
       * {
@@ -30,6 +31,18 @@
           fill: var(--color-secondary-md);
         }
       }
+    }
+  }
+
+  .delete {
+    cursor: pointer;
+  }
+
+  .grip {
+    cursor: grab;
+
+    &:hover {
+      cursor: grabbing;
     }
   }
 }

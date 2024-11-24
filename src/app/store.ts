@@ -22,6 +22,7 @@ import { galleryListenerMiddleware } from "../features/gallery/gallery-middlewar
 import { languageSlice } from "../features/language";
 import { languageListenerMiddleware } from "../features/language/language-middleware";
 import { layersSlice } from "../features/layers";
+import { layersListenerMiddleware } from "../features/layers/layers-middleware";
 import { lineSlice } from "../features/line";
 import { lineListenerMiddleware } from "../features/line/line-middleware";
 import { navigationSlice } from "../features/navigation";
@@ -72,7 +73,8 @@ export const store = configureStore({
       .prepend(themeListenerMiddleware.middleware)
       .prepend(sizeListenerMiddleware.middleware)
       .prepend(overviewListenerMiddleware.middleware)
-      .prepend(navigationListenerMiddleware.middleware),
+      .prepend(navigationListenerMiddleware.middleware)
+      .prepend(layersListenerMiddleware.middleware),
 });
 
 export const persistor = persistStore(store);

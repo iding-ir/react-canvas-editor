@@ -32,6 +32,9 @@ export const lineSlice = createAppSlice({
     addLine: create.reducer((state, { payload }: PayloadAction<LineType>) => {
       state.lines = [...state.lines, payload];
     }),
+    deleteLine: create.reducer((state, { payload }: PayloadAction<string>) => {
+      state.lines = state.lines.filter((line) => line.id !== payload);
+    }),
     addPoint: create.reducer((state, { payload }: PayloadAction<number[]>) => {
       state.lines[state.lines.length - 1].points = [
         ...state.lines[state.lines.length - 1].points,
@@ -62,8 +65,14 @@ export const lineSlice = createAppSlice({
   },
 });
 
-export const { addLine, addPoint, changeLineSize, setLineColor, setTool } =
-  lineSlice.actions;
+export const {
+  addLine,
+  deleteLine,
+  addPoint,
+  changeLineSize,
+  setLineColor,
+  setTool,
+} = lineSlice.actions;
 
 export const { selectLines, selectLineSize, selectLineColor, selectTool } =
   lineSlice.selectors;
