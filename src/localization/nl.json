@@ -2,7 +2,7 @@
   "header": {
     "title": "Canvas-editor"
   },
-  "navigatie": {
+  "navigation": {
     "canvas": "Canvas",
     "gallery": "Galerij",
     "line": "Vrijhand",
@@ -61,35 +61,35 @@
     "png": "PNG",
     "pdf": "PDF"
   },
-  "instellingen": {
-    "titel": "Instellingen",
-    "taal": {
+  "settings": {
+    "title": "Instellingen",
+    "language": {
       "label": "Taal",
-      "opties": {
+      "options": {
         "en": "Engels",
         "nl": "Nederlands"
       }
     },
-    "thema": {
+    "theme": {
       "label": "Thema",
-      "opties": {
+      "options": {
         "licht": "Licht",
         "donker": "Donker"
       }
     },
-    "grootte": {
+    "size": {
       "label": "Grootte",
-      "opties": {
+      "options": {
         "sm": "Klein",
         "md": "Medium",
         "lg": "Groot"
       }
     }
   },
-  "overzicht": {
+  "overview": {
     "zoom": {
       "label": "Zoomen",
-      "opties": {
+      "options": {
         "25": "25%",
         "50": "50%",
         "100": "100%",
