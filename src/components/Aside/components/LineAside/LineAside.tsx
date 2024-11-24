@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 
 import BrushIcon from "../../../../assets/icons/brush.svg";
-import { LineColorPicker } from "../../../../features/line/components/LineColorPicker";
-import { LineSizeSelector } from "../../../../features/line/components/LineSizeSelector";
+import { LineColorPicker } from "../../../../features/lines/components/LineColorPicker";
+import { LineSizeSelector } from "../../../../features/lines/components/LineSizeSelector";
 import { Form } from "../../../Form/Form";
 import { Field } from "../../../Form/components/Field";
 import asideStyles from "../Aside.module.scss";

@@ -18,13 +18,13 @@ import storage from "redux-persist/lib/storage";
 
 import { canvasSlice } from "../features/canvas";
 import { imageSlice } from "../features/images";
-import { imageListenerMiddleware } from "../features/images/image-middleware";
+import { imageListenerMiddleware } from "../features/images/images-middleware";
 import { languageSlice } from "../features/language";
 import { languageListenerMiddleware } from "../features/language/language-middleware";
 import { layersSlice } from "../features/layers";
 import { layersListenerMiddleware } from "../features/layers/layers-middleware";
-import { lineSlice } from "../features/line";
-import { lineListenerMiddleware } from "../features/line/line-middleware";
+import { lineListenerMiddleware } from "../features/lines/lines-middleware";
+import { lineSlice } from "../features/lines/lines-slice";
 import { navigationSlice } from "../features/navigation";
 import { navigationListenerMiddleware } from "../features/navigation/navigation-middleware";
 import { overviewSlice } from "../features/overview";
@@ -32,8 +32,8 @@ import { overviewListenerMiddleware } from "../features/overview/overview-middle
 import { photoSlice } from "../features/photos";
 import { sizeSlice } from "../features/size";
 import { sizeListenerMiddleware } from "../features/size/size-middleware";
-import { textSlice } from "../features/text";
-import { textListenerMiddleware } from "../features/text/text-middleware";
+import { textListenerMiddleware } from "../features/texts/texts-middleware";
+import { textSlice } from "../features/texts/texts-slice";
 import { themeSlice } from "../features/theme";
 import { themeListenerMiddleware } from "../features/theme/theme-middleware";
 

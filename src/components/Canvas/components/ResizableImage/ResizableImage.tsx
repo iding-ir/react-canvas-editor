@@ -2,8 +2,8 @@ import Konva from "konva";
 import { Image } from "react-konva";
 
 import { useAppSelector } from "../../../../app/hooks";
-import { ImageType } from "../../../../features/gallery/photos";
-import { selectTool } from "../../../../features/line/line-slice";
+import { ImageType } from "../../../../features/images/images";
+import { selectTool } from "../../../../features/lines/lines-slice";
 import { useResize } from "../../../../hooks/use-resize";
 
 export const ResizableImage = ({

@@ -1,8 +1,8 @@
 import { useAppSelector } from "../../../../app/hooks";
 import { selectCanvasHeight, selectCanvasWidth } from "../../../canvas";
-import { ImageType } from "../../../gallery/photos";
-import { LineType } from "../../../line/line";
-import { TextType } from "../../../text/text";
+import { ImageType } from "../../../images/images";
+import { LineType } from "../../../lines/lines";
+import { TextType } from "../../../texts/texts";
 import { LayerType } from "../../layers";
 import { ImageThumbnail } from "./components/ImageThumbnail";
 import { LineThumbnail } from "./components/LineThumbnail";

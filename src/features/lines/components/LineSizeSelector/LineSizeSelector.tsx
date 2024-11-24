@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../../app/hooks";
 import CircleIcon from "../../../../assets/icons/circle.svg";
 import { Input } from "../../../../components/Form/components/Input";
-import { MAX_LINE_SIZE, MIN_LINE_SIZE } from "../../line";
-import { changeLineSize, selectLineSize } from "../../line-slice";
+import { MAX_LINE_SIZE, MIN_LINE_SIZE } from "../../lines";
+import { changeLineSize, selectLineSize } from "../../lines-slice";
 import styles from "./LineSizeSelector.module.scss";
 
 export const LineSizeSelector = () => {

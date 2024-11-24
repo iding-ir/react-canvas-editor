@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 
 import ContentIcon from "../../../../assets/icons/content.svg";
 import FontIcon from "../../../../assets/icons/font.svg";
-import { TextColorPicker } from "../../../../features/text/components/TextColorPicker";
-import { TextInput } from "../../../../features/text/components/TextInput";
-import { TextSizeSelector } from "../../../../features/text/components/TextSizeSelector";
+import { TextColorPicker } from "../../../../features/texts/components/TextColorPicker";
+import { TextInput } from "../../../../features/texts/components/TextInput";
+import { TextSizeSelector } from "../../../../features/texts/components/TextSizeSelector";
 import { Form } from "../../../Form/Form";
 import { Field } from "../../../Form/components/Field";
 import asideStyles from "../Aside.module.scss";

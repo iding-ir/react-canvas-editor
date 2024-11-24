@@ -1,7 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-import { ImageType } from "./image";
+import { ImageType } from "./images";
 
 export interface ImageState {
   images: ImageType[];
@@ -12,7 +12,7 @@ const initialState: ImageState = {
 };
 
 export const imageSlice = createAppSlice({
-  name: "image",
+  name: "images",
   initialState,
   reducers: (create) => ({
     addImage: create.reducer((state, { payload }: PayloadAction<ImageType>) => {

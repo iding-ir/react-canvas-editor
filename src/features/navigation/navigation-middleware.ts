@@ -1,6 +1,6 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit";
 
-import { setTool } from "../line";
+import { setTool } from "../lines/lines-slice";
 import { setNavigation } from "./navigation-slice";
 
 export const navigationListenerMiddleware = createListenerMiddleware();

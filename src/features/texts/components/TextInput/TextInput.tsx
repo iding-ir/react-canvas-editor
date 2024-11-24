@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import TextIcon from "../../../../assets/icons/text.svg";
 import { Button } from "../../../../components/Form/components/Button";
 import { Input } from "../../../../components/Form/components/Input";
-import { addText, selectTextColor, selectTextSize } from "../../text-slice";
+import { addText, selectTextColor, selectTextSize } from "../../texts-slice";
 import styles from "./TextInput.module.scss";
 
 export const TextInput = () => {

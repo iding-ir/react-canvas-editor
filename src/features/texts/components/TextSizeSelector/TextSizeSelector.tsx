@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../../../app/hooks";
 import CircleIcon from "../../../../assets/icons/circle.svg";
 import { Input } from "../../../../components/Form/components/Input";
-import { MAX_TEXT_SIZE, MIN_TEXT_SIZE } from "../../text";
-import { changeTextSize, selectTextSize } from "../../text-slice";
+import { MAX_TEXT_SIZE, MIN_TEXT_SIZE } from "../../texts";
+import { changeTextSize, selectTextSize } from "../../texts-slice";
 import styles from "./TextSizeSelector.module.scss";
 
 export const TextSizeSelector = () => {

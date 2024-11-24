@@ -9,7 +9,7 @@ import {
   selectLineColor,
   selectLineSize,
   selectTool,
-} from "../features/line";
+} from "../features/lines";
 
 export const useFreehandDrawing = () => {
   const dispatch = useAppDispatch();

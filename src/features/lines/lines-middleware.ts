@@ -1,7 +1,7 @@
 import { createListenerMiddleware } from "@reduxjs/toolkit";
 
 import { addLayer } from "../layers";
-import { addLine } from "./line-slice";
+import { addLine } from "./lines-slice";
 
 export const lineListenerMiddleware = createListenerMiddleware();
 

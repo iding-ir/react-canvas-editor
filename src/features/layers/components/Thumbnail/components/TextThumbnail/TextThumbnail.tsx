@@ -1,6 +1,6 @@
 import { Layer, Stage, Text } from "react-konva";
 
-import { TextType } from "../../../../../text/text";
+import { TextType } from "../../../../../texts/texts";
 import styles from "../../Thumbnail.module.scss";
 
 export const TextThumbnail = ({

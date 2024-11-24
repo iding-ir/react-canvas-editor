@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { ImageType } from "../../../../features/gallery/photos";
+import { ImageType } from "../../../../features/images/images";
 import { getImageDisplaySize } from "../../../../methods/get-image-display-size";
 import { ResizableImage } from "../ResizableImage/ResizableImage";
 

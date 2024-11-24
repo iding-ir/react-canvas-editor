@@ -7,7 +7,7 @@ import {
   selectCanvasSelectedItem,
   setCanvasSelectedItem,
 } from "../features/canvas";
-import { selectTool } from "../features/line";
+import { selectTool } from "../features/lines";
 
 export const useResize = <T extends Konva.Image | Konva.Text | Konva.Line>({
   id,

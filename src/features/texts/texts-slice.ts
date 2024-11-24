@@ -1,7 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-import { DEFAULT_TEXT_COLOR, DEFAULT_TEXT_SIZE, TextType } from "./text";
+import { DEFAULT_TEXT_COLOR, DEFAULT_TEXT_SIZE, TextType } from "./texts";
 
 export interface TextState {
   size: number;
@@ -16,7 +16,7 @@ const initialState: TextState = {
 };
 
 export const textSlice = createAppSlice({
-  name: "text",
+  name: "texts",
   initialState,
   reducers: (create) => ({
     addText: create.reducer((state, { payload }: PayloadAction<TextType>) => {

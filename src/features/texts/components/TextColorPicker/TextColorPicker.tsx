@@ -2,18 +2,18 @@ import { useTranslation } from "react-i18next";
 
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { ColorPicker } from "../../../../components/ColorPicker";
-import { selectLineColor, setLineColor } from "../../line-slice";
+import { selectTextColor, setTextColor } from "../../texts-slice";
 
-export const LineColorPicker = () => {
+export const TextColorPicker = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const color = useAppSelector(selectLineColor);
+  const color = useAppSelector(selectTextColor);
 
   return (
     <ColorPicker
-      label={t("line.color")}
+      label={t("text.font.color")}
       color={color}
-      onChange={(color: string) => dispatch(setLineColor(color))}
+      onChange={(color: string) => dispatch(setTextColor(color))}
     />
   );
 };

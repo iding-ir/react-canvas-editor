@@ -1,7 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 
 import { createAppSlice } from "../createAppSlice";
-import { DEFAULT_LINE_COLOR, DEFAULT_LINE_SIZE, LineType } from "./line";
+import { DEFAULT_LINE_COLOR, DEFAULT_LINE_SIZE, LineType } from "./lines";
 
 export interface LineState {
   size: number;
@@ -18,7 +18,7 @@ const initialState: LineState = {
 };
 
 export const lineSlice = createAppSlice({
-  name: "line",
+  name: "lines",
   initialState,
   reducers: (create) => ({
     addLine: create.reducer((state, { payload }: PayloadAction<LineType>) => {

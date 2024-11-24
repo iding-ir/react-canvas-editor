@@ -1,8 +1,8 @@
 import { useAppSelector } from "../../../../app/hooks";
 import { selectImages } from "../../../../features/images";
 import { LayerType } from "../../../../features/layers";
-import { selectLines } from "../../../../features/line";
-import { selectTexts } from "../../../../features/text";
+import { selectLines } from "../../../../features/lines";
+import { selectTexts } from "../../../../features/texts";
 import { AsyncImage } from "../AsyncImage";
 import { InteractiveLine } from "../InteractiveLine";
 import { InteractiveText } from "../InteractiveText";

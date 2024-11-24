@@ -1,8 +1,8 @@
 import { Line } from "react-konva";
 
 import { useAppSelector } from "../../../../app/hooks";
-import { selectTool } from "../../../../features/line/index";
-import { LineType } from "../../../../features/line/line";
+import { LineType } from "../../../../features/lines/lines";
+import { selectTool } from "../../../../features/lines/lines-slice";
 
 export const InteractiveLine = ({ line }: { line: LineType }) => {
   const { id, size, color, points } = line;
