@@ -12,6 +12,7 @@ import {
 } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { selectLayers, setLayers } from "../../layers-slice";
@@ -29,6 +30,7 @@ const dropAnimationConfig: DropAnimation = {
 };
 
 export const LayerItems = () => {
+  const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const [active, setActive] = useState<Active | null>(null);
   const sensors = useSensors(useSensor(PointerSensor));
@@ -63,6 +65,10 @@ export const LayerItems = () => {
   const onDragCancel = () => {
     setActive(null);
   };
+
+  if (!layers.length) {
+    return <div className={styles.container}>{t("layers.notFound")}</div>;
+  }
 
   return (
     <DndContext

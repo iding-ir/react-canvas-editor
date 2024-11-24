@@ -50,6 +50,9 @@
       "color": "Color"
     }
   },
+  "layers": {
+    "notFound": "No layers found"
+  },
   "export": {
     "title": "Format",
     "download": "Download",

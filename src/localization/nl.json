@@ -1,13 +1,14 @@
 {
   "header": {
-    "title": "Canvas Editor"
+    "title": "Canvas-editor"
   },
-  "navigation": {
+  "navigatie": {
     "canvas": "Canvas",
-    "gallery": "Gallery",
-    "line": "Freehand",
-    "eraser": "Gum",
+    "gallery": "Galerij",
+    "line": "Vrijhand",
+    "eraser": "Gom",
     "text": "Tekst",
+    "layers": "Lagen",
     "export": "Exporteren",
     "settings": "Instellingen"
   },
@@ -16,7 +17,7 @@
       "title": "Document",
       "name": {
         "label": "Bestandsnaam",
-        "placeholder": "Voer hier de naam in"
+        "placeholder": "Voer hier een naam in"
       },
       "color": "Kleur"
     },
@@ -28,7 +29,7 @@
   },
   "gallery": {
     "title": "Uploaden",
-    "choose": "Kiezen",
+    "choose": "Kies",
     "notFound": "Geen afbeeldingen gevonden"
   },
   "line": {
@@ -49,6 +50,9 @@
       "color": "Kleur"
     }
   },
+  "layers": {
+    "notFound": "Geen lagen gevonden"
+  },
   "export": {
     "title": "Formaat",
     "download": "Downloaden",
@@ -57,35 +61,35 @@
     "png": "PNG",
     "pdf": "PDF"
   },
-  "settings": {
-    "title": "Instellingen",
-    "language": {
+  "instellingen": {
+    "titel": "Instellingen",
+    "taal": {
       "label": "Taal",
-      "options": {
+      "opties": {
         "en": "Engels",
         "nl": "Nederlands"
       }
     },
-    "theme": {
+    "thema": {
       "label": "Thema",
-      "options": {
-        "light": "Licht",
-        "dark": "Donker"
+      "opties": {
+        "licht": "Licht",
+        "donker": "Donker"
       }
     },
-    "size": {
+    "grootte": {
       "label": "Grootte",
-      "options": {
+      "opties": {
         "sm": "Klein",
         "md": "Medium",
         "lg": "Groot"
       }
     }
   },
-  "overview": {
+  "overzicht": {
     "zoom": {
-      "label": "Zoom",
-      "options": {
+      "label": "Zoomen",
+      "opties": {
         "25": "25%",
         "50": "50%",
         "100": "100%",
