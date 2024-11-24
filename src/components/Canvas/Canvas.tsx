@@ -1,4 +1,4 @@
-import { Stage } from "react-konva";
+import { Layer, Stage } from "react-konva";
 
 import { useAppSelector } from "../../app/hooks";
 import {
@@ -6,21 +6,15 @@ import {
   selectCanvasHeight,
   selectCanvasWidth,
 } from "../../features/canvas";
-import { selectImages } from "../../features/gallery";
-import { selectLines } from "../../features/line";
-import { selectTexts } from "../../features/text";
+import { selectLayers } from "../../features/layers";
 import { useExportContext } from "../../hooks/use-export";
 import { useFreehandDrawing } from "../../hooks/use-free-hand-drawing";
 import styles from "./Canvas.module.scss";
 import { Background } from "./components/Background";
-import { Images } from "./components/Images";
-import { Lines } from "./components/Lines";
-import { Texts } from "./components/Texts";
+import { OrderedLayer } from "./components/OrderedLayer/OrderedLayer";
 
 export const Canvas = () => {
-  const images = useAppSelector(selectImages);
-  const texts = useAppSelector(selectTexts);
-  const lines = useAppSelector(selectLines);
+  const layers = useAppSelector(selectLayers);
   const canvasWidth = useAppSelector(selectCanvasWidth);
   const canvasHeight = useAppSelector(selectCanvasHeight);
   const canvasBackgroundColor = useAppSelector(selectCanvasBackgroundColor);
@@ -45,15 +39,15 @@ export const Canvas = () => {
         color={canvasBackgroundColor}
       />
 
-      <Images
-        images={images}
-        canvasWidth={canvasWidth}
-        canvasHeight={canvasHeight}
-      />
-
-      <Texts texts={texts} />
-
-      <Lines lines={lines} />
+      {layers.map((layer) => (
+        <Layer key={layer.id}>
+          <OrderedLayer
+            layer={layer}
+            canvasWidth={canvasWidth}
+            canvasHeight={canvasHeight}
+          />
+        </Layer>
+      ))}
     </Stage>
   );
 };
