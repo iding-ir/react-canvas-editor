@@ -23,7 +23,7 @@
 - Leverages `.env` files to support different configurations.
 
 ## Demo
-[Live](https://dev.iding.ir)
+[Live](https://react-canvas-editor.gilak.dev/)
 
 ## Tech Stack
 - `TypeScript`.
